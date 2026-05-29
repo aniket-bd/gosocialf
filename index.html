@@ -26,65 +26,105 @@
   </script>
 
   <style>
-    /* Premium Modern Minimalist Color System */
+    /* Premium Modern Minimalist 2-Color System */
     :root {
       /* Soft Clean Background Base (Light Mode Default) */
-      --canvas-bg: #F8FAFC; /* Slate-50 - Ultra clean slate white */
+      --canvas-bg: #FAF8F5; /* Soft Alabaster Warm Sandstone */
       --bg-card: #FFFFFF;
-      --rich-obsidian: #0F172A; /* Slate-900 - Premium dark gray */
-      --text-main: #0F172A;
-      --text-muted: #475569; /* Slate-600 */
-      --text-light: #64748B; /* Slate-500 */
-      --border-color: #E2E8F0; /* Slate-200 */
+      --rich-obsidian: #1A1D20; /* Deep Charcoal Slate */
+      --text-main: #1A1D20;
+      --text-muted: #605E59; /* Muted Cocoa Slate */
+      --text-light: #8C8A82; /* Warm Slate Gray */
+      --border-color: #EBE7E0; /* Warm Alabaster Border */
       
-      /* Subtle Modern Classic Accents */
-      --accent-blue: #2563EB; /* Sapphire Blue */
-      --accent-blue-bg: rgba(37, 99, 235, 0.05);
-      --accent-indigo: #4F46E5; /* Indigo */
-      --accent-indigo-bg: rgba(79, 70, 229, 0.05);
-      --accent-teal: #0D9488; /* Premium Teal */
-      --accent-teal-bg: rgba(13, 148, 136, 0.05);
-      --accent-violet: #7C3AED; /* Violet */
-      --accent-violet-bg: rgba(124, 58, 237, 0.05);
-      --accent-slate: #334155;
-      --accent-slate-bg: rgba(51, 65, 85, 0.05);
+      /* Subtle Modern Soft Accents (Terracotta Chestnut) */
+      --accent-blue: #B58A6F; /* Soft Warm Terracotta */
+      --accent-blue-bg: rgba(181, 138, 111, 0.05);
+      --accent-indigo: #B58A6F; 
+      --accent-indigo-bg: rgba(181, 138, 111, 0.05);
+      --accent-teal: #8C786A;
+      --accent-teal-bg: rgba(140, 120, 106, 0.05);
+      --accent-violet: #A88674;
+      --accent-violet-bg: rgba(168, 134, 116, 0.05);
+      --accent-slate: #8C8A82;
+      --accent-slate-bg: rgba(140, 138, 130, 0.05);
 
-      --friction-bg: #FFF5F5;
-      --friction-border: #FFE4E6;
-      --flow-bg: #F0F9FF;
-      --flow-border: #E0F2FE;
-      --success-green: #10B981;
+      --friction-bg: #FAF1EE;
+      --friction-border: #F3E0DA;
+      --flow-bg: #F4F6F1;
+      --flow-border: #E5EADF;
+      --success-green: #8C786A;
       
       --font-main: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
       --font-tag: 'Plus Jakarta Sans', sans-serif;
+
+      /* Firewatch Sunset Colors (Light Mode Default) */
+      --fw-bg: #FAE0C8;
+      --fw-cloud: #FFFFFF;
+      --fw-bird: #000000;
+      --fw-tree1: #2D1427;
+      --fw-tree2: #5A0831;
+      --fw-tree3: #CD4D45;
+      --fw-range: #F46435;
+      --fw-mountain1: #F59452;
+      --fw-mountain2: #F47A45;
+      --fw-wood: #370D09;
+      --fw-pole: #791819;
+      --fw-flag: #C63737;
+      --fw-tower1: #76122C;
+      --fw-tower2: #C93D3D;
+      --fw-tower3: #821021;
+      --fw-tower4: #F4633A;
+      --fw-tower5: #4B1205;
+      --fw-tower6: #C13C45;
     }
 
     body.dark {
-      /* Dark Theme Tones - Tech Luxe Slate */
-      --canvas-bg: #020617; /* Slate-950 - Rich Deep Velvet Navy-Black */
-      --bg-card: #0F172A; /* Slate-900 - Dark Luxury Card */
-      --rich-obsidian: #F8FAFC;
-      --text-main: #F8FAFC;
-      --text-muted: #94A3B8; /* Slate-400 */
-      --text-light: #64748B; /* Slate-500 */
-      --border-color: #1E293B; /* Slate-800 */
+      /* Dark Theme Tones (Velvet Obsidian & Melon Gold) */
+      --canvas-bg: #0E1013; /* Deep Velvet Obsidian Navy-Black */
+      --bg-card: #16191E; /* Charcoal slate card backdrop */
+      --rich-obsidian: #F7F4EF; /* Alabaster Soft Cream for text highlights */
+      --text-main: #F7F4EF;
+      --text-muted: #9AA0A6; /* Soft Muted Platinum */
+      --text-light: #6C737A; /* Dark Slate Gray */
+      --border-color: #242930; /* Fine dark border */
 
-      /* Dark mode classic accents */
-      --accent-blue: #60A5FA;
-      --accent-blue-bg: rgba(96, 165, 250, 0.08);
-      --accent-indigo: #818CF8;
-      --accent-indigo-bg: rgba(129, 140, 248, 0.08);
-      --accent-teal: #2DD4BF;
-      --accent-teal-bg: rgba(45, 212, 191, 0.08);
-      --accent-violet: #A78BFA;
-      --accent-violet-bg: rgba(167, 139, 250, 0.08);
-      --accent-slate: #94A3B8;
-      --accent-slate-bg: rgba(148, 163, 184, 0.08);
+      /* High-contrast Warm Melon Accents */
+      --accent-blue: #FFB285; /* Soft Melon Gold */
+      --accent-blue-bg: rgba(255, 178, 133, 0.08);
+      --accent-indigo: #FFB285;
+      --accent-indigo-bg: rgba(255, 178, 133, 0.08);
+      --accent-teal: #FFB285;
+      --accent-teal-bg: rgba(255, 178, 133, 0.08);
+      --accent-violet: #FFB285;
+      --accent-violet-bg: rgba(255, 178, 133, 0.08);
+      --accent-slate: #9AA0A6;
+      --accent-slate-bg: rgba(154, 160, 166, 0.08);
 
-      --friction-bg: #1A1012;
-      --friction-border: #44161B;
-      --flow-bg: #0A1329;
-      --flow-border: #132D59;
+      --friction-bg: #221415;
+      --friction-border: #442123;
+      --flow-bg: #11201B;
+      --flow-border: #1B362F;
+
+      /* Firewatch Midnight Colors (Dark Mode Overrides) */
+      --fw-bg: #0B0E17;       /* Dark Starry Sky Base */
+      --fw-cloud: #1E2235;    /* Night Clouds */
+      --fw-bird: #2E334D;     /* Flying shadows */
+      --fw-tree1: #0A0A10;    /* Darkest silhouette ridge */
+      --fw-tree2: #141324;
+      --fw-tree3: #221D38;
+      --fw-range: #281D41;
+      --fw-mountain1: #2E1A47;
+      --fw-mountain2: #24133A;
+      --fw-wood: #0F081D;
+      --fw-pole: #4B091B;
+      --fw-flag: #9D001B;
+      --fw-tower1: #4B0715;
+      --fw-tower2: #84161B;
+      --fw-tower3: #56040F;
+      --fw-tower4: #AA1E2A;
+      --fw-tower5: #2E0505;
+      --fw-tower6: #8E1F26;
     }
 
     * {
@@ -93,12 +133,12 @@
       padding: 0;
     }
 
-    /* BOLD ALL THE TEXT IN THE WEBSITE */
+    /* PREMIUM BODY TYPOGRAPHY BALANCE */
     html, body, p, li, span, a, button, div, input, select, textarea {
-      font-weight: 700 !important; /* Forces bold across the entire site */
+      font-weight: 700 !important; /* Retaining bold structural aesthetic */
     }
 
-    /* Headings to look extra bold to maintain structure */
+    /* Headings remain extra chunky */
     h1, h2, h3, h4, h5, h6, .brand-name, .metric-number {
       font-weight: 800 !important;
     }
@@ -119,11 +159,11 @@
       overflow-x: hidden;
       /* Soft premium ambient lighting glow mapping */
       background-image: 
-        radial-gradient(circle at 5% 10%, rgba(37, 99, 235, 0.02) 0%, transparent 35%),
-        radial-gradient(circle at 95% 45%, rgba(79, 70, 229, 0.02) 0%, transparent 40%);
+        radial-gradient(circle at 5% 10%, rgba(181, 138, 111, 0.03) 0%, transparent 35%),
+        radial-gradient(circle at 95% 45%, rgba(255, 178, 133, 0.02) 0%, transparent 40%);
       background-attachment: fixed;
       background-color: var(--canvas-bg);
-      transition: background-color 0.3s ease, color 0.3s ease;
+      transition: background-color 0.4s cubic-bezier(0.16, 1, 0.3, 1), color 0.4s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
     /* Sticky Navigation */
@@ -131,7 +171,7 @@
       position: sticky;
       top: 0;
       z-index: 1000;
-      background: rgba(248, 250, 252, 0.85);
+      background: rgba(250, 248, 245, 0.85);
       backdrop-filter: blur(20px);
       -webkit-backdrop-filter: blur(20px);
       border-bottom: 1px solid var(--border-color);
@@ -140,11 +180,11 @@
       align-items: center;
       justify-content: space-between;
       padding: 0 40px;
-      transition: all 0.3s ease;
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
     }
     
     body.dark header {
-      background: rgba(2, 6, 23, 0.85);
+      background: rgba(14, 16, 19, 0.85);
     }
 
     .nav-left {
@@ -157,22 +197,27 @@
 
     /* SQUARE FIT HEADER LOGO CONTAINER */
     .logo-container {
-      width: 44px; /* Perfectly Square */
-      height: 44px; /* Perfectly Square */
-      border-radius: 8px;
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
       overflow: hidden;
       display: flex;
       align-items: center;
       justify-content: center;
       border: 1px solid var(--border-color);
-      box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.02);
       background: #FFFFFF;
+      transition: border-color 0.3s ease;
+    }
+
+    body.dark .logo-container {
+      background: var(--bg-card);
     }
 
     .logo-img {
       width: 100%;
       height: 100%;
-      object-fit: contain; /* Fitted properly to look clean and uncropped */
+      object-fit: contain;
       padding: 4px;
     }
 
@@ -189,15 +234,15 @@
     /* Pill Tab Switcher */
     .tab-switcher {
       display: flex;
-      background: #EAEAEB;
+      background: #EBE7E0;
       padding: 4px;
       border-radius: 100px;
       gap: 2px;
-      box-shadow: inset 0 1px 3px rgba(0,0,0,0.05);
+      box-shadow: inset 0 1px 3px rgba(0,0,0,0.03);
     }
     
     body.dark .tab-switcher {
-      background: #1E293B;
+      background: #1C1F26;
     }
 
     .tab-btn {
@@ -209,7 +254,7 @@
       padding: 8px 20px;
       border-radius: 100px;
       cursor: pointer;
-      transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
       -webkit-tap-highlight-color: transparent;
     }
 
@@ -220,37 +265,585 @@
     .tab-btn.active {
       background: #FFFFFF;
       color: var(--rich-obsidian);
-      box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.06);
+      box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.04);
     }
     
     body.dark .tab-btn.active {
-      background: #111823;
+      background: var(--canvas-bg);
       color: #FFFFFF;
     }
 
     .nav-right {
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 16px;
     }
 
-    /* Theme Toggle Button */
-    .theme-toggle-btn {
-      background: transparent;
-      border: 1px solid var(--border-color);
-      border-radius: 50%;
+    /* ========================================== */
+    /* COMPILED SQUARE FIREWATCH TOGGLE SWITCH */
+    /* ========================================== */
+    .firewatch-toggle-wrapper {
+      position: relative;
       width: 44px;
       height: 44px;
       display: flex;
       align-items: center;
       justify-content: center;
       cursor: pointer;
-      color: var(--text-main);
-      transition: all 0.2s;
+      border-radius: 12px;
+      border: 1px solid var(--border-color);
+      background: var(--fw-bg);
+      overflow: hidden;
+      user-select: none;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+      transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), border-color 0.3s ease, background-color 0.3s ease;
     }
     
-    .theme-toggle-btn:hover {
-      background: var(--border-color);
+    .firewatch-toggle-wrapper:hover {
+      transform: translateY(-2px) scale(1.06);
+      border-color: var(--accent-indigo);
+    }
+
+    .firewatch-toggle-wrapper:active {
+      transform: translateY(0) scale(0.95);
+    }
+
+    .firewatch-toggle-container {
+      position: absolute;
+      width: 335px;
+      height: 335px;
+      background: var(--fw-bg);
+      border-radius: 0;
+      overflow: hidden;
+      transform: scale(0.13134);
+      transform-origin: center;
+      transition: background-color 0.5s ease;
+      pointer-events: none;
+    }
+
+    /* Moon & Stars Dynamic Elements for Capsule */
+    .firewatch-toggle-container .moon {
+      position: absolute;
+      top: 40px;
+      left: 240px;
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      background: transparent;
+      box-shadow: -10px 10px 0 0 #ECEFF1;
+      opacity: 0;
+      transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      transform: translateY(-25px) scale(0.5);
+    }
+
+    body.dark .firewatch-toggle-container .moon {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+
+    .firewatch-toggle-container .stars {
+      position: absolute;
+      width: 100%;
+      height: 150px;
+      top: 0;
+      left: 0;
+      opacity: 0;
+      transition: opacity 0.5s ease;
+    }
+
+    body.dark .firewatch-toggle-container .stars {
+      opacity: 0.85;
+    }
+
+    .firewatch-toggle-container .star {
+      position: absolute;
+      background: #FFFFFF;
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+    }
+    .firewatch-toggle-container .star.s1 { top: 25px; left: 40px; }
+    .firewatch-toggle-container .star.s2 { top: 50px; left: 100px; }
+    .firewatch-toggle-container .star.s3 { top: 20px; left: 180px; }
+    .firewatch-toggle-container .star.s4 { top: 60px; left: 230px; }
+    .firewatch-toggle-container .star.s5 { top: 35px; left: 280px; }
+
+    .mountain {
+      position: absolute;
+      top: 0;
+      opacity: 1;
+      width: 100%;
+      height: 100%;
+    }
+    
+    .mountain .backdrop {
+      position: absolute;
+      top: 80px;
+      left: calc(50% - 260px);
+      width: 0;
+      height: 0;
+      border-left: 260px solid transparent;
+      border-right: 260px solid transparent;
+      border-bottom: 200px solid var(--fw-mountain1);
+      transition: border-bottom-color 0.5s ease;
+    }
+
+    .mountain .zig {
+      position: absolute;
+      width: 0;
+      height: 0;
+      transform: rotate(217deg);
+    }
+
+    .mountain .zig.zag1 {
+      top: 83px;
+      left: calc(50% - 10px);
+      border-left: 10px solid transparent;
+      border-right: 10px solid transparent;
+      border-bottom: 30px solid var(--fw-mountain2);
+      transition: border-bottom-color 0.5s ease;
+    }
+
+    .mountain .zig.zag2 {
+      top: 94px;
+      left: calc(50% - 10px);
+      border-left: 20px solid transparent;
+      border-right: 20px solid transparent;
+      border-bottom: 60px solid var(--fw-mountain2);
+      transition: border-bottom-color 0.5s ease;
+    }
+
+    .mountain .zig.zag3 {
+      top: 115px;
+      left: calc(50% + 4px);
+      border-left: 30px solid transparent;
+      border-right: 30px solid transparent;
+      border-bottom: 80px solid var(--fw-mountain2);
+      transition: border-bottom-color 0.5s ease;
+    }
+
+    .mountain .zig.zag4 {
+      top: 137px;
+      left: calc(50% + 20px);
+      border-left: 40px solid transparent;
+      border-right: 40px solid transparent;
+      border-bottom: 100px solid var(--fw-mountain2);
+      transition: border-bottom-color 0.5s ease;
+    }
+
+    .tree {
+      opacity: 1;
+      position: absolute;
+    }
+
+    .tree > div {
+      position: absolute;
+    }
+
+    .tree.treeFront > div {
+      border-bottom-color: var(--fw-tree1);
+      transition: border-bottom-color 0.5s ease;
+    }
+    .tree.treeFront.tree1 { top: 200px; left: -10px; }
+    .tree.treeFront.tree2 { top: 220px; left: 90px; }
+    .tree.treeFront.tree3 { top: 238px; left: 190px; }
+    .tree.treeFront.tree4 { top: 224px; left: 280px; }
+
+    .tree.treeMid > div {
+      border-bottom-color: var(--fw-tree2);
+      transition: border-bottom-color 0.5s ease;
+    }
+    .tree.treeMid.tree1 { top: 225px; left: 30px; }
+    .tree.treeMid.tree2 { top: 232px; left: 110px; }
+    .tree.treeMid.tree3 { top: 225px; left: 170px; }
+    .tree.treeMid.tree4 { top: 223px; left: 230px; }
+    .tree.treeMid.tree5 { top: 215px; left: 300px; }
+
+    .tree.treeBack > div {
+      border-bottom-color: var(--fw-tree3);
+      transition: border-bottom-color 0.5s ease;
+    }
+    .tree.treeBack.tree1 { top: 202px; left: -20px; }
+    .tree.treeBack.tree2 { top: 204px; left: 35px; }
+    .tree.treeBack.tree3 { top: 212px; left: 80px; }
+    .tree.treeBack.tree4 { top: 210px; left: 125px; }
+    .tree.treeBack.tree5 { top: 208px; left: 170px; }
+    .tree.treeBack.tree6 { top: 210px; left: 215px; }
+    .tree.treeBack.tree7 { top: 204px; left: 260px; }
+    .tree.treeBack.tree8 { top: 202px; left: 305px; }
+
+    .tree .top {
+      border-left: 17px solid transparent;
+      border-right: 17px solid transparent;
+      border-bottom: 45px solid #000;
+    }
+    .tree .mid {
+      top: 16px;
+      left: -7px;
+      border-left: 24px solid transparent;
+      border-right: 24px solid transparent;
+      border-bottom: 58px solid #000;
+    }
+    .tree .bot {
+      top: 30px;
+      left: -12px;
+      border-left: 29px solid transparent;
+      border-right: 29px solid transparent;
+      border-bottom: 68px solid #000;
+    }
+    .tree .base {
+      top: 44px;
+      left: -16px;
+      border-left: 33px solid transparent;
+      border-right: 33px solid transparent;
+      border-bottom: 75px solid blue;
+      display: none;
+    }
+
+    .range {
+      position: absolute;
+      top: 0;
+      opacity: 1;
+    }
+
+    .range > div {
+      position: absolute;
+      background: var(--fw-range);
+      width: 120px;
+      height: 80px;
+      transition: background-color 0.5s ease;
+    }
+
+    .range .r1 { top: 200px; left: -40px; transform: rotate(20deg); }
+    .range .r2 { top: 195px; left: 20px; transform: rotate(-5deg); }
+    .range .r3 { top: 205px; left: 80px; transform: rotate(15deg); }
+    .range .r4 { top: 202px; left: 140px; transform: rotate(-15deg); }
+    .range .r5 { top: 198px; left: 200px; transform: rotate(10deg); }
+    .range .r6 { top: 200px; left: 250px; transform: rotate(-20deg); }
+    .range .r7 { top: 195px; left: 290px; transform: rotate(25deg); }
+
+    .tower {
+      position: absolute;
+      width: 74px;
+      margin-top: 108px;
+      margin-left: calc(50% - 37px);
+      opacity: 1;
+    }
+
+    .tower .shadow {
+      position: absolute;
+      z-index: 9999;
+      top: 12px;
+      width: 100%;
+      height: 42px;
+      background: #000;
+      clip-path: polygon(50% 0, 100% 40%, 100% 45%, 87% 45%, 87% 90%, 100% 90%, 100% 100%, 60% 100%, 60% 31%, 50% 0);
+      opacity: .4;
+    }
+
+    .tower .flagPole {
+      width: 2px;
+      height: 12px;
+      background: var(--fw-pole);
+      margin-left: 36px;
+      position: relative;
+      transition: background-color 0.5s ease;
+    }
+
+    .tower .flagPole:after {
+      content: '';
+      width: 12px;
+      height: 6px;
+      background: var(--fw-flag);
+      position: absolute;
+      display: block;
+      transition: background-color 0.5s ease;
+    }
+
+    .tower .roof1 {
+      border-left: 34px solid transparent;
+      border-right: 34px solid transparent;
+      border-bottom: 15px solid var(--fw-tower1);
+      transition: border-bottom-color 0.5s ease;
+    }
+
+    .tower .roof2 {
+      width: 100%;
+      height: 3px;
+      background: var(--fw-tower2);
+      transition: background-color 0.5s ease;
+    }
+
+    .tower .wall {
+      position: relative;
+      width: 76%;
+      height: 22px;
+      background: var(--fw-tower3);
+      margin-left: 12%;
+      padding-top: 4px;
+      transition: background-color 0.5s ease;
+    }
+
+    .tower .wall .w1, .tower .wall .w2, .tower .wall .w3, .tower .wall .w4, .tower .wall .w5 {
+      position: absolute;
+      width: 8px;
+      height: 14px;
+      background: var(--fw-tower4);
+      transition: background-color 0.5s ease;
+    }
+    .tower .wall .w1 { left: 4px; }
+    .tower .wall .w2 { left: 14px; }
+    .tower .wall .w3 { left: 24px; }
+    .tower .wall .w4 { left: 34px; }
+    .tower .wall .w5 { left: 44px; }
+
+    .tower .legs {
+      position: relative;
+    }
+
+    .tower .legs .left,
+    .tower .legs .right {
+      position: absolute;
+      width: 4px;
+      height: 150px;
+      background: var(--fw-wood);
+      transition: background-color 0.5s ease;
+    }
+    .tower .legs .left {
+      transform: rotate(3deg);
+      left: 12px;
+    }
+    .tower .legs .right {
+      transform: rotate(-3deg);
+      right: 12px;
+    }
+
+    .tower .legs .support1,
+    .tower .legs .support2 {
+      position: absolute;
+    }
+
+    .tower .legs .support1 .criss,
+    .tower .legs .support1 .cross,
+    .tower .legs .support2 .criss,
+    .tower .legs .support2 .cross {
+      position: absolute;
+      left: 35px;
+      width: 4px;
+      height: 64px;
+      background: var(--fw-wood);
+      transition: background-color 0.5s ease;
+    }
+    .tower .legs .support1 .criss, .tower .legs .support2 .criss { transform: rotate(45deg); }
+    .tower .legs .support1 .cross, .tower .legs .support2 .cross { transform: rotate(-45deg); }
+    .tower .legs .support1 .flat, .tower .legs .support2 .flat {
+      position: absolute;
+      width: 46px;
+      height: 4px;
+      background: var(--fw-wood);
+      bottom: -55px;
+      left: 14px;
+      transition: background-color 0.5s ease;
+    }
+    .tower .legs .support1 { top: -14px; }
+    .tower .legs .support2 { top: 28px; }
+
+    .tower .railing {
+      position: relative;
+      top: -16px;
+    }
+
+    .tower .railing .r1, .tower .railing .r2, .tower .railing .r3, .tower .railing .r4, .tower .railing .r5, .tower .railing .r6, .tower .railing .r7, .tower .railing .r8, .tower .railing .r9 {
+      position: absolute;
+      width: 2px;
+      height: 10px;
+      background: var(--fw-wood);
+      transition: background-color 0.5s ease;
+    }
+    .tower .railing .r1 { left: 5px; }
+    .tower .railing .r2 { left: 12px; }
+    .tower .railing .r3 { left: 20px; }
+    .tower .railing .r4 { left: 28px; }
+    .tower .railing .r5 { left: 36px; }
+    .tower .railing .r6 { left: 44px; }
+    .tower .railing .r7 { left: 52px; }
+    .tower .railing .r8 { left: 60px; }
+    .tower .railing .r9 { right: 5px; }
+
+    .tower .railing .top, .tower .railing .bot1, .tower .railing .bot2 { position: absolute; }
+    .tower .railing .top {
+      width: 100%;
+      height: 2px;
+      background: var(--fw-tower5);
+      transition: background-color 0.5s ease;
+    }
+    .tower .railing .bot1 {
+      width: 100%;
+      height: 4px;
+      top: 10px;
+      background: var(--fw-tower6);
+      transition: background-color 0.5s ease;
+    }
+    .tower .railing .bot2 {
+      width: 80%;
+      height: 2px;
+      top: 14px;
+      left: 8px;
+      background: var(--fw-tower5);
+      opacity: 1;
+      transition: background-color 0.5s ease;
+    }
+
+    .cloud {
+      position: absolute;
+      width: 162px;
+      height: 55px;
+      overflow: hidden;
+      transition: opacity 0.5s ease;
+    }
+
+    .cloud.big {
+      top: 10px;
+      transform: scale(.8);
+      animation: bigCloud 12s linear infinite;
+    }
+
+    .cloud.small {
+      top: 70px;
+      transform: scale(.4);
+      animation: smallCloud 12s linear infinite;
+      animation-delay: 4s;
+    }
+
+    .cloud .circle {
+      position: absolute;
+      border-radius: 50%;
+      background: var(--fw-cloud);
+      transition: background-color 0.5s ease;
+    }
+
+    .cloud .c1 { width: 32px; height: 32px; bottom: -15px; }
+    .cloud .c2 { width: 35px; height: 35px; left: 20px; bottom: 0; }
+    .cloud .c3 { width: 25px; height: 25px; left: 48px; bottom: 15px; }
+    .cloud .c4 { width: 35px; height: 35px; left: 65px; bottom: 20px; }
+    .cloud .c5 { width: 25px; height: 25px; left: 94px; bottom: 16px; }
+    .cloud .c6 { width: 30px; height: 30px; left: 110px; bottom: -5px; }
+    .cloud .c7 { width: 30px; height: 30px; left: 132px; bottom: -15px; }
+    .cloud .c8 { width: 90px; height: 90px; left: 30px; bottom: -55px; background: var(--fw-cloud); transition: background-color 0.5s ease; }
+
+    @keyframes bigCloud {
+      0% { transform: translateX(-200px) scale(.8); }
+      100% { transform: translateX(200px) scale(.8); }
+    }
+
+    @keyframes smallCloud {
+      0% { transform: translateX(-200px) scale(.4); }
+      100% { transform: translateX(200px) scale(.4); }
+    }
+
+    .birds {
+      position: absolute;
+      z-index: 9999;
+      width: 100px;
+      height: 100px;
+    }
+
+    .birds.front {
+      animation: flyFront 4s linear infinite;
+      animation-delay: .5s;
+      top: 200px;
+      left: 200px;
+    }
+
+    .birds.back {
+      animation: flyBack 4s linear infinite;
+      animation-delay: .5s;
+      top: 50px;
+      left: -425px;
+    }
+
+    .birds .bird {
+      position: absolute;
+      transform: scale(0.15);
+    }
+
+    .birds .bird .wing1 {
+      animation: flap .5s ease-in-out infinite alternate;
+      transform-origin: 0 0;
+    }
+    .birds .b1 .wing1 { animation-duration: 0.35s; }
+    .birds .b2 .wing1 { animation-duration: 0.4s; }
+    .birds .b3 .wing1 { animation-duration: 0.45s; }
+    .birds .b4 .wing1 { animation-duration: 0.42s; }
+    .birds .b5 .wing1 { animation-duration: 0.52s; }
+    .birds .b6 .wing1 { animation-duration: 0.38s; }
+    .birds .b7 .wing1 { animation-duration: 0.48s; }
+    .birds .b8 .wing1 { animation-duration: 0.35s; }
+    .birds .b9 .wing1 { animation-duration: 0.44s; }
+    .birds .b10 .wing1 { animation-duration: 0.5s; }
+    .birds .b11 .wing1 { animation-duration: 0.39s; }
+    .birds .b12 .wing1 { animation-duration: 0.46s; }
+
+    .birds .b1 { top: -30px; }
+    .birds .b2 { top: -20px; left: -15px; }
+    .birds .b3 { left: 10px; }
+    .birds .b4 { top: 15px; left: 20px; }
+    .birds .b5 { top: 30px; left: -5px; }
+    .birds .b6 { top: 45px; left: 5px; }
+    .birds .b7 { top: -5px; left: -35px; }
+    .birds .b8 { top: 10px; left: -25px; }
+    .birds .b9 { top: 25px; left: -50px; }
+    .birds .b10 { top: 40px; left: -40px; }
+    .birds .b11 { top: -10px; left: -75px; }
+    .birds .b12 { top: 5px; left: -65px; }
+
+    .birds .body {
+      clip-path: polygon(0 100%, 20% 20%, 40% 0, 100% 100%, 20% 80%);
+      background: var(--fw-bird);
+      width: 150px;
+      height: 40px;
+      transition: background-color 0.5s ease;
+    }
+
+    .birds .wing1 {
+      position: relative;
+      left: 40px;
+      top: -20px;
+      width: 40px;
+      height: 50px;
+      background: var(--fw-bird);
+      transform: skew(10deg);
+      transition: background-color 0.5s ease;
+    }
+
+    .birds .wing1 .wing2 {
+      position: absolute;
+      bottom: -25px;
+      left: 13px;
+      transform: rotate(-5deg);
+    }
+
+    .birds .wing1 .wing3 {
+      width: 40px;
+      height: 30px;
+      background: var(--fw-bird);
+      transform: skew(40deg);
+      transition: background-color 0.5s ease;
+    }
+
+    @keyframes flap {
+      0% { transform: skew(10deg) rotateX(50deg); }
+      100% { transform: skew(15deg) rotateX(120deg); }
+    }
+
+    @keyframes flyFront {
+      0% { transform: translate3d(0, 0, 0) rotate(15deg); }
+      100% { transform: translate3d(-600px, -150px, 0) rotate(15deg); }
+    }
+
+    @keyframes flyBack {
+      0% { transform: translate3d(0, 0, 0) scale(.6) scaleX(-1) rotate(-15deg); }
+      100% { transform: translate3d(600px, -50px, 0) scale(.6) scaleX(-1) rotate(15deg); }
     }
 
     /* Primary Black Pill CTA */
@@ -258,7 +851,7 @@
       font-family: var(--font-main);
       font-size: 13.5px;
       background: var(--rich-obsidian);
-      color: #FFFFFF;
+      color: var(--canvas-bg);
       border: none;
       padding: 12px 24px;
       border-radius: 100px;
@@ -320,7 +913,7 @@
 
     /* 30% SCALE BOOST HERO EMBLEM LOGO */
     .hero-logo-emblem {
-      width: 115px; /* Boosted by 30% from old size */
+      width: 115px;
       height: 115px;
       border-radius: 26px;
       overflow: hidden;
@@ -331,6 +924,10 @@
       align-items: center;
       justify-content: center;
       transition: transform 0.4s ease;
+    }
+
+    body.dark .hero-logo-emblem {
+      background: var(--bg-card);
     }
 
     .hero-logo-emblem:hover {
@@ -449,6 +1046,9 @@
       margin-bottom: 18px;
       letter-spacing: -0.015em;
       color: var(--text-main);
+      display: flex;
+      align-items: center;
+      gap: 12px;
     }
 
     .comp-card p {
@@ -616,7 +1216,7 @@
       -webkit-backdrop-filter: blur(16px);
       border: 1.5px solid rgba(255, 255, 255, 0.25);
       border-radius: 50%;
-      width: 52px; /* Large highly click-friendly diameter */
+      width: 52px;
       height: 52px;
       display: flex;
       align-items: center;
@@ -631,7 +1231,7 @@
     .video-action-btn svg {
       width: 22px;
       height: 22px;
-      stroke-width: 2.5; /* Bolder visibility stroke */
+      stroke-width: 2.5;
     }
 
     .video-action-btn:hover {
@@ -802,6 +1402,10 @@
       box-shadow: 0 8px 30px rgba(0,0,0,0.03);
     }
 
+    body.dark .portrait-mask {
+      background: var(--bg-card);
+    }
+
     .portrait-img {
       width: 100%;
       height: 100%;
@@ -866,18 +1470,18 @@
 
     .progress-bar {
       height: 6px;
-      background: #EAEAEA;
+      background: #EBE7E0;
       border-radius: 100px;
       overflow: hidden;
     }
     
     body.dark .progress-bar {
-      background: #374151;
+      background: #242930;
     }
 
     .progress-fill {
       height: 100%;
-      background: var(--text-light);
+      background: var(--accent-indigo);
       border-radius: 100px;
     }
 
@@ -929,12 +1533,11 @@
       margin-bottom: 28px;
     }
 
-
     /* NEW ULTRA-CLEAN MODERN SERVICES DECK */
     .services-intro {
       text-align: center;
       max-width: 720px;
-      margin: 0 auto 60px auto;
+      margin: 0 auto 30px auto;
     }
 
     .services-intro h2 {
@@ -950,6 +1553,239 @@
       line-height: 1.6;
     }
 
+    /* ====================================================== */
+    /* CURVED CAROUSEL DESIGN STYLES (Framer Curve Styled) */
+    /* ====================================================== */
+    .curve-carousel-outer {
+      position: relative;
+      width: 100%;
+      perspective: 1200px; /* Essential depth variable for 3D translations */
+      overflow: visible;
+      padding: 60px 0;
+      margin-bottom: 60px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .curve-carousel-track {
+      position: relative;
+      width: 100%;
+      height: 480px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transform-style: preserve-3d;
+      transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .package-card {
+      position: absolute;
+      width: 320px;
+      height: 450px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 28px;
+      padding: 36px 28px;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.03);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+      transform-style: preserve-3d;
+      backface-visibility: hidden;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    body.dark .package-card {
+      box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    }
+
+    /* Precise CURVING transform modifiers controlled natively via Active Index markers */
+    .package-card.active {
+      transform: translateX(0) translateZ(80px) rotateY(0deg) scale(1.05);
+      z-index: 10;
+      opacity: 1;
+      border-color: var(--accent-indigo);
+      box-shadow: 0 25px 50px rgba(181, 138, 111, 0.1);
+    }
+
+    body.dark .package-card.active {
+      box-shadow: 0 25px 50px rgba(255, 178, 133, 0.12);
+    }
+
+    .package-card.prev-1 {
+      transform: translateX(-240px) translateZ(-50px) rotateY(20deg) scale(0.9);
+      z-index: 5;
+      opacity: 0.65;
+    }
+
+    .package-card.next-1 {
+      transform: translateX(240px) translateZ(-50px) rotateY(-20deg) scale(0.9);
+      z-index: 5;
+      opacity: 0.65;
+    }
+
+    .package-card.hidden-left {
+      transform: translateX(-420px) translateZ(-150px) rotateY(35deg) scale(0.75);
+      z-index: 2;
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .package-card.hidden-right {
+      transform: translateX(420px) translateZ(-150px) rotateY(-35deg) scale(0.75);
+      z-index: 2;
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    /* Styling inner parts of the premium plans card */
+    .plan-header {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .plan-tag {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--accent-indigo);
+      background: var(--accent-blue-bg);
+      padding: 6px 12px;
+      border-radius: 100px;
+      align-self: flex-start;
+    }
+
+    .plan-title {
+      font-size: 24px;
+      letter-spacing: -0.02em;
+      color: var(--text-main);
+    }
+
+    .plan-desc {
+      font-size: 13.5px;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    .plan-features {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin: 24px 0;
+    }
+
+    .plan-features li {
+      font-size: 13.5px;
+      color: var(--text-muted);
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      line-height: 1.4;
+    }
+
+    .plan-features svg {
+      width: 16px;
+      height: 16px;
+      color: var(--accent-indigo);
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .plan-action {
+      width: 100%;
+      border-radius: 100px;
+      padding: 14px 0;
+      font-size: 13.5px;
+      cursor: pointer;
+      text-align: center;
+      transition: all 0.2s;
+    }
+
+    .plan-action.primary {
+      background: var(--text-main);
+      color: var(--canvas-bg);
+      border: none;
+    }
+
+    .plan-action.primary:hover {
+      opacity: 0.9;
+    }
+
+    .plan-action.secondary {
+      background: transparent;
+      color: var(--text-main);
+      border: 1.5px solid var(--border-color);
+    }
+
+    .plan-action.secondary:hover {
+      border-color: var(--text-main);
+    }
+
+    /* Custom Addon feature grid highlight style */
+    .addon-grid-display {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 8px;
+    }
+
+    .addon-badge {
+      font-size: 11px;
+      background: var(--border-color);
+      color: var(--text-main);
+      padding: 6px 10px;
+      border-radius: 8px;
+      text-align: center;
+      white-space: nowrap;
+    }
+
+    /* Carousel navigation helpers */
+    .carousel-nav-btn {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 50%;
+      width: 48px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      color: var(--text-main);
+      transition: all 0.2s;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+    }
+
+    .carousel-nav-btn:hover {
+      border-color: var(--text-main);
+      transform: scale(1.05);
+    }
+
+    .carousel-indicators {
+      display: flex;
+      gap: 8px;
+      margin-top: 30px;
+    }
+
+    .carousel-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--border-color);
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .carousel-dot.active {
+      background: var(--accent-indigo);
+      width: 24px;
+      border-radius: 100px;
+    }
+
+    /* Services deep-dive static listing */
     .services-deck {
       display: grid;
       grid-template-columns: 1fr;
@@ -1100,7 +1936,6 @@
       transform: rotate(-45deg);
     }
 
-
     /* Team Section Styles */
     .team-section {
       margin-top: 80px;
@@ -1150,6 +1985,10 @@
       justify-content: center;
     }
 
+    body.dark .team-portrait-frame {
+      background: var(--bg-card);
+    }
+
     .team-avatar {
       width: 100%;
       height: 100%;
@@ -1170,10 +2009,14 @@
 
     /* Global Obsidian Black Footer */
     footer {
-      background: #090E1A; /* Luxe Velvet Charcoal Navy */
+      background: #1A1D20; /* Dark Truffle/Caviar Base */
       color: #FFFFFF;
       padding: 80px 40px 60px 40px;
       margin-top: auto;
+    }
+
+    body.dark footer {
+      background: #090A0D;
     }
 
     .footer-wrapper {
@@ -1185,7 +2028,7 @@
       display: flex;
       justify-content: space-between;
       align-items: flex-start;
-      border-bottom: 1px solid #1E293B;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
       padding-bottom: 60px;
       margin-bottom: 40px;
     }
@@ -1216,7 +2059,7 @@
     .footer-tagline {
       font-family: var(--font-tag);
       font-size: 11px;
-      color: #94A3B8;
+      color: #8C8A82;
       letter-spacing: 0.2em;
     }
 
@@ -1233,13 +2076,13 @@
 
     .footer-nav-col span {
       font-size: 11px;
-      color: #64748B;
+      color: #8C8A82;
       text-transform: uppercase;
       letter-spacing: 0.1em;
     }
 
     .footer-nav-col a {
-      color: #94A3B8;
+      color: #B5B2A9;
       text-decoration: none;
       font-size: 13.5px;
       transition: color 0.2s;
@@ -1265,14 +2108,14 @@
 
     .matrix-label {
       font-size: 11px;
-      color: #64748B;
+      color: #8C8A82;
       text-transform: uppercase;
       letter-spacing: 0.08em;
     }
 
     .matrix-value {
       font-size: 15px;
-      color: #E2E8F0;
+      color: #FAF8F5;
       text-decoration: none;
       transition: color 0.2s;
     }
@@ -1317,9 +2160,41 @@
       .tab-frame { padding: 40px 16px; }
       .h1-title { font-size: 34px; }
       
-      .comparison-grid, .split-grid, .timeline-item, .testimonial-carousel, .team-grid {
+      .comparison-grid, .split-grid, .timeline-item, .team-grid {
         grid-template-columns: 1fr;
         gap: 24px;
+      }
+
+      /* curved package cards mobile adjustments */
+      .curve-carousel-track {
+        height: 520px;
+      }
+      .package-card {
+        width: 290px;
+        height: 480px;
+        padding: 28px 20px;
+      }
+      .package-card.prev-1 {
+        transform: translateX(-160px) translateZ(-50px) rotateY(15deg) scale(0.85);
+        opacity: 0.5;
+      }
+      .package-card.next-1 {
+        transform: translateX(160px) translateZ(-50px) rotateY(-15deg) scale(0.85);
+        opacity: 0.5;
+      }
+
+      /* MOBILE PRESERVING OPTIMIZED TESTIMONIAL VIDEO FLOW */
+      .testimonial-carousel {
+        grid-template-columns: 1fr;
+        padding: 32px 20px !important; /* Reduced heavy margins to let video take maximum available mobile width */
+        gap: 32px;
+      }
+
+      .video-testimonial-block {
+        width: 100%;
+        aspect-ratio: 16 / 9; /* Perfect wide proportions on mobile screen */
+        max-width: 550px; /* Keep layout crisp on mobile landscape & tablets */
+        margin: 0 auto;
       }
 
       /* Services mobile adjustment */
@@ -1368,13 +2243,147 @@
     </div>
 
     <div class="nav-right">
-      <!-- Theme Switcher Button -->
-      <button class="theme-toggle-btn" onclick="toggleTheme()" aria-label="Toggle Theme">
-        <!-- Sun Icon (visible in dark mode) -->
-        <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display: none;"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
-        <!-- Moon Icon (visible in light mode) -->
-        <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
-      </button>
+      <!-- High-precision Square Toggle Switch (Viewport aligned to exactly 44px * 44px with a clean border radius) -->
+      <div class="firewatch-toggle-wrapper" onclick="toggleTheme()" aria-label="Toggle Theme" title="Toggle Light/Dark Theme">
+        <div class="firewatch-toggle-container">
+          <!-- Stars & Moon (Rendered only on Dark Mode active state) -->
+          <div class="stars">
+            <div class="star s1"></div>
+            <div class="star s2"></div>
+            <div class="star s3"></div>
+            <div class="star s4"></div>
+            <div class="star s5"></div>
+          </div>
+          <div class="moon"></div>
+          
+          <!-- Mountain scenery layers -->
+          <div class="mountain">
+            <div class="backdrop"></div>
+            <div class="zig zag1"></div>
+            <div class="zig zag2"></div>
+            <div class="zig zag3"></div>
+            <div class="zig zag4"></div>
+          </div>
+
+          <!-- Midground Ranges / Ridges -->
+          <div class="range">
+            <div class="r1"></div>
+            <div class="r2"></div>
+            <div class="r3"></div>
+            <div class="r4"></div>
+            <div class="r5"></div>
+            <div class="r6"></div>
+            <div class="r7"></div>
+          </div>
+
+          <!-- Firewatch Tower structure -->
+          <div class="tower">
+            <div class="shadow"></div>
+            <div class="flagPole"></div>
+            <div class="roof1"></div>
+            <div class="roof2"></div>
+            <div class="wall">
+              <div class="w1"></div>
+              <div class="w2"></div>
+              <div class="w3"></div>
+              <div class="w4"></div>
+              <div class="w5"></div>
+            </div>
+            <div class="railing">
+              <div class="r1"></div>
+              <div class="r2"></div>
+              <div class="r3"></div>
+              <div class="r4"></div>
+              <div class="r5"></div>
+              <div class="r6"></div>
+              <div class="r7"></div>
+              <div class="r8"></div>
+              <div class="r9"></div>
+              <div class="top"></div>
+              <div class="bot1"></div>
+              <div class="bot2"></div>
+            </div>
+            <div class="legs">
+              <div class="left"></div>
+              <div class="right"></div>
+              <div class="support1">
+                <div class="criss"></div>
+                <div class="cross"></div>
+                <div class="flat"></div>
+              </div>
+              <div class="support2">
+                <div class="criss"></div>
+                <div class="cross"></div>
+                <div class="flat"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Flying birds animation layers -->
+          <div class="birds front">
+            <div class="bird b1"><div class="body"></div><div class="wing1"><div class="wing2"></div><div class="wing3"></div></div></div>
+            <div class="bird b2"><div class="body"></div><div class="wing1"><div class="wing2"></div><div class="wing3"></div></div></div>
+            <div class="bird b3"><div class="body"></div><div class="wing1"><div class="wing2"></div><div class="wing3"></div></div></div>
+            <div class="bird b4"><div class="body"></div><div class="wing1"><div class="wing2"></div><div class="wing3"></div></div></div>
+            <div class="bird b5"><div class="body"></div><div class="wing1"><div class="wing2"></div><div class="wing3"></div></div></div>
+            <div class="bird b6"><div class="body"></div><div class="wing1"><div class="wing2"></div><div class="wing3"></div></div></div>
+          </div>
+          <div class="birds back">
+            <div class="bird b7"><div class="body"></div><div class="wing1"><div class="wing2"></div><div class="wing3"></div></div></div>
+            <div class="bird b8"><div class="body"></div><div class="wing1"><div class="wing2"></div><div class="wing3"></div></div></div>
+            <div class="bird b9"><div class="body"></div><div class="wing1"><div class="wing2"></div><div class="wing3"></div></div></div>
+            <div class="bird b10"><div class="body"></div><div class="wing1"><div class="wing2"></div><div class="wing3"></div></div></div>
+            <div class="bird b11"><div class="body"></div><div class="wing1"><div class="wing2"></div><div class="wing3"></div></div></div>
+            <div class="bird b12"><div class="body"></div><div class="wing1"><div class="wing2"></div><div class="wing3"></div></div></div>
+          </div>
+
+          <!-- Ambient animated clouds layers -->
+          <div class="cloud big">
+            <div class="circle c1"></div>
+            <div class="circle c2"></div>
+            <div class="circle c3"></div>
+            <div class="circle c4"></div>
+            <div class="circle c5"></div>
+            <div class="circle c6"></div>
+            <div class="circle c7"></div>
+            <div class="circle c8"></div>
+          </div>
+          <div class="cloud small">
+            <div class="circle c1"></div>
+            <div class="circle c2"></div>
+            <div class="circle c3"></div>
+            <div class="circle c4"></div>
+            <div class="circle c5"></div>
+            <div class="circle c6"></div>
+            <div class="circle c7"></div>
+            <div class="circle c8"></div>
+          </div>
+
+          <!-- Frontline / Midline / Backline Trees layers -->
+          <div class="tree treeBack tree1"><div class="top"></div><div class="mid"></div><div class="bot"></div><div class="base"></div></div>
+          <div class="tree treeBack tree2"><div class="top"></div><div class="mid"></div><div class="bot"></div><div class="base"></div></div>
+          <div class="tree treeBack tree3"><div class="top"></div><div class="mid"></div><div class="bot"></div><div class="base"></div></div>
+          <div class="tree treeBack tree4"><div class="top"></div><div class="mid"></div><div class="bot"></div><div class="base"></div></div>
+          <div class="tree treeBack tree5"><div class="top"></div><div class="mid"></div><div class="bot"></div><div class="base"></div></div>
+          <div class="tree treeBack tree6"><div class="top"></div><div class="mid"></div><div class="bot"></div><div class="base"></div></div>
+          <div class="tree treeBack tree7"><div class="top"></div><div class="mid"></div><div class="bot"></div><div class="base"></div></div>
+          <div class="tree treeBack tree8"><div class="top"></div><div class="mid"></div><div class="bot"></div><div class="base"></div></div>
+
+          <div class="tree treeMid tree1"><div class="top"></div><div class="mid"></div><div class="bot"></div><div class="base"></div></div>
+          <div class="tree treeMid tree2"><div class="top"></div><div class="mid"></div><div class="bot"></div><div class="base"></div></div>
+          <div class="tree treeMid tree3"><div class="top"></div><div class="mid"></div><div class="bot"></div><div class="base"></div></div>
+          <div class="tree treeMid tree4"><div class="top"></div><div class="mid"></div><div class="bot"></div><div class="base"></div></div>
+          <div class="tree treeMid tree5"><div class="top"></div><div class="mid"></div><div class="bot"></div><div class="base"></div></div>
+
+          <div class="tree treeFront tree1"><div class="top"></div><div class="mid"></div><div class="bot"></div><div class="base"></div></div>
+          <div class="tree treeFront tree2"><div class="top"></div><div class="mid"></div><div class="bot"></div><div class="base"></div></div>
+          <div class="tree treeFront tree3"><div class="top"></div><div class="mid"></div><div class="bot"></div><div class="base"></div></div>
+          <div class="tree treeFront tree4"><div class="top"></div><div class="mid"></div><div class="bot"></div><div class="base"></div></div>
+
+        </div>
+      </div>
+      
+      <!-- Primary Pill CTA Contact Trigger -->
       <button class="btn-pill" onclick="scrollToFooter()">Get in Touch</button>
     </div>
   </header>
@@ -1403,14 +2412,14 @@
       <div class="comparison-grid">
         <div class="comp-card friction">
           <h3>
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="color: #FF3B30;"><circle cx="12" cy="12" r="10"></circle><line x1="15" y1="9" x2="9" y2="15"></line><line x1="9" y1="9" x2="15" y2="15"></line></svg>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="color: #E07A5F;"><circle cx="12" cy="12" r="10"></circle><line x1="15" y1="9" x2="9" y2="15"></line><line x1="9" y1="9" x2="15" y2="15"></line></svg>
             Fragmented Freelancers
           </h3>
           <p>Mismatched layouts, missed delivery deadlines, unoptimized ad spend, and disjointed brand voice under uncoordinated operators.</p>
         </div>
         <div class="comp-card flow">
           <h3>
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="color: var(--success-green);"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="color: var(--accent-indigo);"><polyline points="20 6 9 17 4 12"></polyline></svg>
             Go Social Flow
           </h3>
           <p>One centralized technical pipeline synchronizing content creation, web platforms, and paid marketing pipelines perfectly to scale business metrics.</p>
@@ -1451,9 +2460,7 @@
           <div class="reel-card" id="card-video1">
             <video src="video1.mp4" autoplay loop muted playsinline class="reel-video" oncanplaythrough="this.muted=true; this.play();" onerror="hideVideoAndShowPlaceholder('card-video1')"></video>
             <div class="video-status-toast">
-              <!-- Speaker SVG -->
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="toast-mute-icon" style="display:none;"><path d="M11 5L6 9H2v6h4l5 4V5z"></path><path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path><path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path></svg>
-              <!-- Mute Speaker SVG -->
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="toast-unmute-icon"><path d="M11 5L6 9H2v6h4l5 4V5z"></path><line x1="23" y1="9" x2="17" y2="15"></line><line x1="17" y1="9" x2="23" y2="15"></line></svg>
             </div>
             <div class="video-interactive-overlay">
@@ -1542,12 +2549,12 @@
 
         <!-- Fully Interactive Live Video Block -->
         <div class="video-testimonial-block" id="testimonial-video-container">
-          <video src="testimonial-reel.mp4" loop muted playsinline class="testimonial-live-video" id="testimonial-video" poster="https://placehold.co/600x340/0a0a0a/ffffff?text=Play+Showcase"></video>
+          <video src="videoa.mp4" loop muted playsinline class="testimonial-live-video" id="testimonial-video" poster="https://placehold.co/600x340/1a1d20/ffffff?text=Play+Showcase"></video>
           
           <!-- Play Overlay -->
           <div class="video-testimonial-overlay" id="testimonial-video-overlay">
-            <div class="play-giant-btn">
-              <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+            <div class="play-giant-btn" style="background-color: var(--rich-obsidian); color: var(--canvas-bg);">
+              <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="currentColor"/></svg>
             </div>
             <span style="color: #ffffff; margin-top: 16px; font-weight: 700; font-size: 13px; text-transform: uppercase; letter-spacing: 0.1em; background: rgba(0,0,0,0.6); padding: 4px 12px; border-radius: 100px;">Click to Play & Unmute</span>
           </div>
@@ -1674,7 +2681,7 @@
           <div class="reel-card" id="card-video6">
             <video src="video6.mp4" autoplay loop muted playsinline class="reel-video" oncanplaythrough="this.muted=true; this.play();" onerror="hideVideoAndShowPlaceholder('card-video6')"></video>
             <div class="video-status-toast">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="toast-mute-icon" style="display:none;"><path d="M11 5L6 9H2v6h4l5 4V5z"></path><path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path><path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path></svg>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="toast-mute-icon" style="display:none;"><path d="M11 5L6 9H2v6h4l5 4V5z"></path><path d="M15.54a5 5 0 0 1 0 7.07"></path><path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path></svg>
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="toast-unmute-icon"><path d="M11 5L6 9H2v6h4l5 4V5z"></path><line x1="23" y1="9" x2="17" y2="15"></line><line x1="17" y1="9" x2="23" y2="15"></line></svg>
             </div>
             <div class="video-interactive-overlay">
@@ -1705,9 +2712,148 @@
     <div class="tab-frame" id="frame-services">
       
       <div class="services-intro">
-        <span class="top-label">Our Core Capabilities</span>
-        <h2>High-Performance Growth Pipelines</h2>
+        <span class="top-label">Our Core Packages</span>
+        <h2>Professional Growth Packages</h2>
         <p>A comprehensive overview of our technical performance processes designed to scale your brand's digital footprints, design consistency, and core metrics.</p>
+      </div>
+
+      <!-- CURVED PACKAGE CAROUSEL (Framer Curve Styled Architecture) -->
+      <div class="curve-carousel-outer" id="packages-carousel-container">
+        <!-- Horizontal curved track container -->
+        <div class="curve-carousel-track" id="carousel-track">
+          
+          <!-- Card 1: Starter Plan -->
+          <div class="package-card active" data-index="0" onclick="setCarouselIndex(0)">
+            <div class="plan-header">
+              <span class="plan-tag">Starter Package</span>
+              <h3 class="plan-title">Starter Plan</h3>
+              <p class="plan-desc">Perfect for startups and small businesses beginning their online journey.</p>
+            </div>
+            <ul class="plan-features">
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>5 Professional Videos</span>
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>1 Complimentary Video</span>
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Basic Video Editing</span>
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Social Media Optimized Content</span>
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>HD Quality Delivery</span>
+              </li>
+            </ul>
+            <button class="plan-action secondary" onclick="scrollToFooter(); event.stopPropagation();">Get Started</button>
+          </div>
+
+          <!-- Card 2: Growth Plan -->
+          <div class="package-card next-1" data-index="1" onclick="setCarouselIndex(1)">
+            <div class="plan-header">
+              <span class="plan-tag" style="background: rgba(181,138,111,0.15)">GSF Growth Suite</span>
+              <h3 class="plan-title">Growth Plan</h3>
+              <p class="plan-desc">Designed for brands that want consistent content and strong social media presence.</p>
+            </div>
+            <ul class="plan-features">
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>10 Professional Videos + 1 Complimentary</span>
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Full Social Media Handling</span>
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Creative Captions & Hashtags</span>
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Post Scheduling & Engagement</span>
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Monthly Content Strategy</span>
+              </li>
+            </ul>
+            <button class="plan-action primary" onclick="scrollToFooter(); event.stopPropagation();">Scale Up Now</button>
+          </div>
+
+          <!-- Card 3: Premium Business Plan -->
+          <div class="package-card hidden-right" data-index="2" onclick="setCarouselIndex(2)">
+            <div class="plan-header">
+              <span class="plan-tag" style="background: rgba(255,178,133,0.15)">Complete Package</span>
+              <h3 class="plan-title" style="color: var(--accent-indigo)">Premium Business</h3>
+              <p class="plan-desc">Complete digital growth solution for businesses that want maximum reach & branding.</p>
+            </div>
+            <ul class="plan-features">
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>10 Videos + 1 Complimentary</span>
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Full SMM & Website Development</span>
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Meta Ads Management & Optimization</span>
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Brand Growth Strategy Support</span>
+              </li>
+            </ul>
+            <button class="plan-action primary" onclick="scrollToFooter(); event.stopPropagation();">Get Enterprise Plan</button>
+          </div>
+
+          <!-- Card 4: Custom Add-Ons Available -->
+          <div class="package-card hidden-right" data-index="3" onclick="setCarouselIndex(3)">
+            <div class="plan-header">
+              <span class="plan-tag" style="background: rgba(140,120,106,0.15)">Modular Add-Ons</span>
+              <h3 class="plan-title">Custom Add-Ons</h3>
+              <p class="plan-desc">Additionally add modular high-performance services tailored directly to your workflows.</p>
+            </div>
+            <div class="addon-grid-display">
+              <span class="addon-badge">Extra Videos</span>
+              <span class="addon-badge">Graphic Design</span>
+              <span class="addon-badge">Product Shoots</span>
+              <span class="addon-badge">SEO Services</span>
+              <span class="addon-badge">Branding Solutions</span>
+              <span class="addon-badge">Advanced Ad Campaigns</span>
+            </div>
+            <button class="plan-action secondary" onclick="scrollToFooter(); event.stopPropagation();" style="margin-top: 16px;">Customize Plan</button>
+          </div>
+
+        </div>
+
+        <!-- Touch/Click Curved Navigation controls -->
+        <div style="display: flex; gap: 24px; align-items: center; margin-top: 10px; z-index: 10;">
+          <button class="carousel-nav-btn" onclick="prevCarouselCard()" aria-label="Previous card">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+          </button>
+          <div class="carousel-indicators" id="carousel-dots-tracker">
+            <div class="carousel-dot active" onclick="setCarouselIndex(0)"></div>
+            <div class="carousel-dot" onclick="setCarouselIndex(1)"></div>
+            <div class="carousel-dot" onclick="setCarouselIndex(2)"></div>
+            <div class="carousel-dot" onclick="setCarouselIndex(3)"></div>
+          </div>
+          <button class="carousel-nav-btn" onclick="nextCarouselCard()" aria-label="Next card">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+          </button>
+        </div>
+      </div>
+
+      <div style="margin: 80px auto 40px auto; text-align: center; max-width: 600px;">
+        <span class="top-label">Core GSF Capabilities</span>
+        <h3 style="font-size: 24px; letter-spacing: -0.01em; color: var(--text-main);">Technical Delivery Pipelines</h3>
       </div>
 
       <div class="services-deck">
@@ -1717,7 +2863,6 @@
           <div class="service-meta-left">
             <div class="service-header-group">
               <div class="service-icon-wrapper">
-                <!-- SMM Phone SVG -->
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
               </div>
               <span class="service-tag">GSF-01 · organic growth</span>
@@ -1742,7 +2887,6 @@
           <div class="service-meta-left">
             <div class="service-header-group">
               <div class="service-icon-wrapper">
-                <!-- Video Slate SVG -->
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 7l-7 5 7 5V7z"></path><rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect></svg>
               </div>
               <span class="service-tag">GSF-02 · cinematic editing</span>
@@ -1767,7 +2911,6 @@
           <div class="service-meta-left">
             <div class="service-header-group">
               <div class="service-icon-wrapper">
-                <!-- Graphic Vector SVG -->
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"></path><path d="M2 17l10 5 10-5"></path><path d="M2 12l10 5 10-5"></path></svg>
               </div>
               <span class="service-tag">GSF-03 · creative system</span>
@@ -1792,7 +2935,6 @@
           <div class="service-meta-left">
             <div class="service-header-group">
               <div class="service-icon-wrapper">
-                <!-- Web Code SVG -->
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
               </div>
               <span class="service-tag">GSF-04 · responsive engineering</span>
@@ -1817,7 +2959,6 @@
           <div class="service-meta-left">
             <div class="service-header-group">
               <div class="service-icon-wrapper">
-                <!-- Meta Ads Scale SVG -->
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
               </div>
               <span class="service-tag">GSF-05 · paid scale</span>
@@ -1890,7 +3031,6 @@
         <div class="footer-brand">
           <div class="footer-logo-group">
             <img src="logo.jpeg" onerror="this.src='https://placehold.co/100x100/0a0a0a/ffffff?text=GSF'" alt="GOSOCIALFLOW logo asset in footer" style="height: 28px; width: 28px; object-fit: contain;">
-            <!-- Brand name rendered with high contrast white layout override -->
             <span class="brand-name">GOSOCIALFLOW</span>
           </div>
           <div class="footer-tagline">WE CREATE. WE MANAGE. WE GROW.</div>
@@ -1916,7 +3056,7 @@
         </div>
         <div class="matrix-item">
           <div class="matrix-label">Instagram</div>
-          <a href="https://www.instagram.com/gosocialflow/" target="_blank" class="matrix-value" style="color: #E1306C;">@gosocialflow</a>
+          <a href="https://www.instagram.com/gosocialflow/" target="_blank" class="matrix-value" style="color: var(--accent-indigo);">@gosocialflow</a>
         </div>
         <div class="matrix-item">
           <div class="matrix-label">Call Direct</div>
@@ -1937,21 +3077,6 @@
       body.classList.toggle('dark');
       const isDark = body.classList.contains('dark');
       localStorage.setItem('gsf-theme', isDark ? 'dark' : 'light');
-      updateThemeIcons(isDark);
-    }
-
-    function updateThemeIcons(isDark) {
-      const sunIcon = document.querySelector('.sun-icon');
-      const moonIcon = document.querySelector('.moon-icon');
-      if (sunIcon && moonIcon) {
-        if (isDark) {
-          sunIcon.style.display = 'block';
-          moonIcon.style.display = 'none';
-        } else {
-          sunIcon.style.display = 'none';
-          moonIcon.style.display = 'block';
-        }
-      }
     }
 
     // Auto load theme setup on page load
@@ -1962,9 +3087,6 @@
       if (isDark) {
         document.body.classList.add('dark');
       }
-      window.addEventListener('DOMContentLoaded', () => {
-        updateThemeIcons(document.body.classList.contains('dark'));
-      });
     })();
 
     // Tab controller switcher
@@ -1985,6 +3107,7 @@
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
+    // Smooth Scroll utility
     function scrollToFooter() {
       document.getElementById('global-footer').scrollIntoView({ behavior: 'smooth' });
     }
@@ -2099,6 +3222,86 @@
         });
       }
     }
+
+    // ====================================================
+    // CURVED CAROUSEL LOGIC ENGINE (Framer Curve Emulation)
+    // ====================================================
+    let carouselCurrentIndex = 0;
+    const carouselCards = document.querySelectorAll('.package-card');
+    const totalCarouselCards = carouselCards.length;
+
+    function setCarouselIndex(index) {
+      if (index < 0 || index >= totalCarouselCards) return;
+      carouselCurrentIndex = index;
+      renderCurvedCarousel();
+    }
+
+    function prevCarouselCard() {
+      carouselCurrentIndex = (carouselCurrentIndex - 1 + totalCarouselCards) % totalCarouselCards;
+      renderCurvedCarousel();
+    }
+
+    function nextCarouselCard() {
+      carouselCurrentIndex = (carouselCurrentIndex + 1) % totalCarouselCards;
+      renderCurvedCarousel();
+    }
+
+    function renderCurvedCarousel() {
+      carouselCards.forEach((card, i) => {
+        // Clear all transformation classes
+        card.classList.remove('active', 'prev-1', 'next-1', 'hidden-left', 'hidden-right');
+
+        if (i === carouselCurrentIndex) {
+          card.classList.add('active');
+        } else if (i === carouselCurrentIndex - 1) {
+          card.classList.add('prev-1');
+        } else if (i === carouselCurrentIndex + 1) {
+          card.classList.add('next-1');
+        } else if (i < carouselCurrentIndex) {
+          card.classList.add('hidden-left');
+        } else if (i > carouselCurrentIndex) {
+          card.classList.add('hidden-right');
+        }
+      });
+
+      // Update indicator dots
+      const dots = document.querySelectorAll('.carousel-dot');
+      dots.forEach((dot, index) => {
+        if (index === carouselCurrentIndex) {
+          dot.classList.add('active');
+        } else {
+          dot.classList.remove('active');
+        }
+      });
+    }
+
+    // Swipe gestural controls for Curved pricing container on mobile
+    const carouselContainer = document.getElementById('packages-carousel-container');
+    if (carouselContainer) {
+      let touchStartX = 0;
+      let touchEndX = 0;
+
+      carouselContainer.addEventListener('touchstart', (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+      }, { passive: true });
+
+      carouselContainer.addEventListener('touchend', (e) => {
+        touchEndX = e.changedTouches[0].screenX;
+        handleCarouselSwipe();
+      }, { passive: true });
+
+      function handleCarouselSwipe() {
+        const threshold = 50; // minimum distance in pixels to count as swipe
+        if (touchStartX - touchEndX > threshold) {
+          nextCarouselCard(); // Swipe Left -> Go to Next
+        } else if (touchEndX - touchStartX > threshold) {
+          prevCarouselCard(); // Swipe Right -> Go to Prev
+        }
+      }
+    }
+
+    // Start with initialized curved values
+    renderCurvedCarousel();
   </script>
 </body>
 </html>
