@@ -6,7 +6,7 @@
   <title>GOSOCIALFLOW — Your Entire Digital Growth Engine.</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@600;700;800&family=Plus+Jakarta+Sans:wght@700;800&display=swap" rel="stylesheet">
   
   <script>
     // Handles graceful video fallbacks early to avoid ReferenceError on load failure
@@ -26,36 +26,65 @@
   </script>
 
   <style>
+    /* Premium Modern Minimalist Color System */
     :root {
-      --canvas-white: #FAFBFD;
-      --rich-obsidian: #0A0A0A;
-      --text-main: #1D1D1F;
-      --text-muted: #4A4A4A;
-      --text-light: #666666;
-      --border-color: #E2E4E9;
-      --sf-gray: #F4F6F9;
-      --friction-bg: #FFF6F6;
-      --flow-bg: #F2F7FF;
-      --slate-accent: #2C3E50;
-      --primary-blue: #0066CC;
-      --bright-teal: #00D2C4;
-      --success-green: #34C759;
+      /* Soft Clean Background Base (Light Mode Default) */
+      --canvas-bg: #F8FAFC; /* Slate-50 - Ultra clean slate white */
+      --bg-card: #FFFFFF;
+      --rich-obsidian: #0F172A; /* Slate-900 - Premium dark gray */
+      --text-main: #0F172A;
+      --text-muted: #475569; /* Slate-600 */
+      --text-light: #64748B; /* Slate-500 */
+      --border-color: #E2E8F0; /* Slate-200 */
       
-      /* New light soft coloring design system */
-      --pastel-blue-bg: linear-gradient(180deg, #FFFFFF 0%, #F3F7FD 100%);
-      --pastel-purple-bg: linear-gradient(180deg, #FFFFFF 0%, #F8F3FD 100%);
-      --pastel-teal-bg: linear-gradient(180deg, #FFFFFF 0%, #F1FBF9 100%);
-      --pastel-amber-bg: linear-gradient(180deg, #FFFFFF 0%, #FCF8F2 100%);
-      --pastel-indigo-bg: linear-gradient(180deg, #FFFFFF 0%, #F4F5FF 100%);
-      
-      --pastel-blue-border: #D1E3FA;
-      --pastel-purple-border: #EADBFC;
-      --pastel-teal-border: #D1F5EE;
-      --pastel-amber-border: #F7EAD7;
-      --pastel-indigo-border: #E0E3FF;
+      /* Subtle Modern Classic Accents */
+      --accent-blue: #2563EB; /* Sapphire Blue */
+      --accent-blue-bg: rgba(37, 99, 235, 0.05);
+      --accent-indigo: #4F46E5; /* Indigo */
+      --accent-indigo-bg: rgba(79, 70, 229, 0.05);
+      --accent-teal: #0D9488; /* Premium Teal */
+      --accent-teal-bg: rgba(13, 148, 136, 0.05);
+      --accent-violet: #7C3AED; /* Violet */
+      --accent-violet-bg: rgba(124, 58, 237, 0.05);
+      --accent-slate: #334155;
+      --accent-slate-bg: rgba(51, 65, 85, 0.05);
 
+      --friction-bg: #FFF5F5;
+      --friction-border: #FFE4E6;
+      --flow-bg: #F0F9FF;
+      --flow-border: #E0F2FE;
+      --success-green: #10B981;
+      
       --font-main: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
       --font-tag: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    body.dark {
+      /* Dark Theme Tones - Tech Luxe Slate */
+      --canvas-bg: #020617; /* Slate-950 - Rich Deep Velvet Navy-Black */
+      --bg-card: #0F172A; /* Slate-900 - Dark Luxury Card */
+      --rich-obsidian: #F8FAFC;
+      --text-main: #F8FAFC;
+      --text-muted: #94A3B8; /* Slate-400 */
+      --text-light: #64748B; /* Slate-500 */
+      --border-color: #1E293B; /* Slate-800 */
+
+      /* Dark mode classic accents */
+      --accent-blue: #60A5FA;
+      --accent-blue-bg: rgba(96, 165, 250, 0.08);
+      --accent-indigo: #818CF8;
+      --accent-indigo-bg: rgba(129, 140, 248, 0.08);
+      --accent-teal: #2DD4BF;
+      --accent-teal-bg: rgba(45, 212, 191, 0.08);
+      --accent-violet: #A78BFA;
+      --accent-violet-bg: rgba(167, 139, 250, 0.08);
+      --accent-slate: #94A3B8;
+      --accent-slate-bg: rgba(148, 163, 184, 0.08);
+
+      --friction-bg: #1A1012;
+      --friction-border: #44161B;
+      --flow-bg: #0A1329;
+      --flow-border: #132D59;
     }
 
     * {
@@ -64,9 +93,19 @@
       padding: 0;
     }
 
+    /* BOLD ALL THE TEXT IN THE WEBSITE */
+    html, body, p, li, span, a, button, div, input, select, textarea {
+      font-weight: 700 !important; /* Forces bold across the entire site */
+    }
+
+    /* Headings to look extra bold to maintain structure */
+    h1, h2, h3, h4, h5, h6, .brand-name, .metric-number {
+      font-weight: 800 !important;
+    }
+
     html {
       scroll-behavior: smooth;
-      background-color: var(--canvas-white);
+      background-color: var(--canvas-bg);
       color: var(--text-main);
       font-family: var(--font-main);
       -webkit-font-smoothing: antialiased;
@@ -78,27 +117,34 @@
       display: flex;
       flex-direction: column;
       overflow-x: hidden;
-      /* Subtle premium background glow */
+      /* Soft premium ambient lighting glow mapping */
       background-image: 
-        radial-gradient(circle at 10% 15%, rgba(224, 235, 255, 0.45) 0%, transparent 40%),
-        radial-gradient(circle at 85% 60%, rgba(246, 235, 255, 0.45) 0%, transparent 35%);
+        radial-gradient(circle at 5% 10%, rgba(37, 99, 235, 0.02) 0%, transparent 35%),
+        radial-gradient(circle at 95% 45%, rgba(79, 70, 229, 0.02) 0%, transparent 40%);
       background-attachment: fixed;
+      background-color: var(--canvas-bg);
+      transition: background-color 0.3s ease, color 0.3s ease;
     }
 
+    /* Sticky Navigation */
     header {
       position: sticky;
       top: 0;
       z-index: 1000;
-      background: rgba(250, 251, 253, 0.88);
+      background: rgba(248, 250, 252, 0.85);
       backdrop-filter: blur(20px);
       -webkit-backdrop-filter: blur(20px);
       border-bottom: 1px solid var(--border-color);
-      height: 72px;
+      height: 76px;
       display: flex;
       align-items: center;
       justify-content: space-between;
       padding: 0 40px;
       transition: all 0.3s ease;
+    }
+    
+    body.dark header {
+      background: rgba(2, 6, 23, 0.85);
     }
 
     .nav-left {
@@ -109,85 +155,58 @@
       color: var(--text-main);
     }
 
+    /* SQUARE FIT HEADER LOGO CONTAINER */
     .logo-container {
-      width: 44px; /* Modified to perfect square to fit branding gracefully */
-      height: 44px; /* Modified to perfect square to fit branding gracefully */
-      border-radius: 10px; /* Proportionally adjusted corner smoothing */
+      width: 44px; /* Perfectly Square */
+      height: 44px; /* Perfectly Square */
+      border-radius: 8px;
       overflow: hidden;
       display: flex;
       align-items: center;
       justify-content: center;
       border: 1px solid var(--border-color);
-      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.03);
       background: #FFFFFF;
     }
 
     .logo-img {
       width: 100%;
       height: 100%;
-      object-fit: contain; /* Ensures the branding artwork fits inside the square bounds properly without cropping */
-      padding: 4px; /* Elegant internal breathing room */
-      background: #FFFFFF;
+      object-fit: contain; /* Fitted properly to look clean and uncropped */
+      padding: 4px;
     }
 
     .brand-name {
       font-family: var(--font-tag);
-      font-weight: 800;
-      font-size: 16px;
-      letter-spacing: -0.03em;
+      font-size: 15px;
+      letter-spacing: -0.02em;
       text-transform: uppercase;
-      background: linear-gradient(135deg, var(--rich-obsidian) 30%, #4a5568);
+      background: linear-gradient(135deg, var(--text-main) 40%, var(--accent-indigo));
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-    }
-
-    .hero-brand-top {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 12px;
-      margin-bottom: 20px;
-    }
-
-    .hero-logo-emblem {
-      width: 115px; /* Increased size by an additional 30% from 88px */
-      height: 115px; /* Increased size by an additional 30% from 88px */
-      border-radius: 26px; /* Scaled proportional rounded cornering */
-      overflow: hidden;
-      border: 1px solid var(--border-color);
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
-      background: #FFFFFF;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .hero-logo-emblem img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain; /* Prevents emblem cropping on high pixel density screens */
-      padding: 8px; /* Adjusted padding for the larger emblem size */
-      background: #FFFFFF;
     }
 
     /* Pill Tab Switcher */
     .tab-switcher {
       display: flex;
-      background: #E4E7ED;
+      background: #EAEAEB;
       padding: 4px;
       border-radius: 100px;
       gap: 2px;
       box-shadow: inset 0 1px 3px rgba(0,0,0,0.05);
     }
+    
+    body.dark .tab-switcher {
+      background: #1E293B;
+    }
 
     .tab-btn {
       font-family: var(--font-main);
-      font-size: 14px;
-      font-weight: 600;
+      font-size: 13.5px;
       color: var(--text-light);
       background: transparent;
       border: none;
-      padding: 8px 22px;
+      padding: 8px 20px;
       border-radius: 100px;
       cursor: pointer;
       transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
@@ -200,34 +219,68 @@
 
     .tab-btn.active {
       background: #FFFFFF;
-      color: var(--text-main);
-      box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.08);
+      color: var(--rich-obsidian);
+      box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.06);
+    }
+    
+    body.dark .tab-btn.active {
+      background: #111823;
+      color: #FFFFFF;
     }
 
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    /* Theme Toggle Button */
+    .theme-toggle-btn {
+      background: transparent;
+      border: 1px solid var(--border-color);
+      border-radius: 50%;
+      width: 44px;
+      height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      color: var(--text-main);
+      transition: all 0.2s;
+    }
+    
+    .theme-toggle-btn:hover {
+      background: var(--border-color);
+    }
+
+    /* Primary Black Pill CTA */
     .btn-pill {
       font-family: var(--font-main);
       font-size: 13.5px;
-      font-weight: 600;
       background: var(--rich-obsidian);
       color: #FFFFFF;
       border: none;
-      padding: 11px 24px;
+      padding: 12px 24px;
       border-radius: 100px;
       cursor: pointer;
-      transition: background-color 0.2s, transform 0.1s, box-shadow 0.2s;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      transition: background-color 0.2s, transform 0.1s;
       -webkit-tap-highlight-color: transparent;
+    }
+    
+    body.dark .btn-pill {
+      background: #FFFFFF;
+      color: #111827;
     }
 
     .btn-pill:hover {
-      background-color: #222222;
-      box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+      opacity: 0.9;
     }
     
     .btn-pill:active {
-      transform: scale(0.96);
+      transform: scale(0.97);
     }
 
+    /* Main Component Switcher Container */
     main {
       flex: 1;
       position: relative;
@@ -238,9 +291,9 @@
       opacity: 0;
       transform: translateY(15px);
       transition: opacity 0.35s cubic-bezier(0.4, 0, 0.2, 1), transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-      max-width: 1200px;
+      max-width: 1100px;
       margin: 0 auto;
-      padding: 60px 24px;
+      padding: 80px 40px;
     }
 
     .tab-frame.active {
@@ -249,41 +302,71 @@
       transform: translateY(0);
     }
 
+    /* FRAME 1: Home Viewport Styling */
     .hero-section {
       text-align: center;
       margin-bottom: 90px;
-      padding-top: 40px;
+      padding-top: 20px;
       position: relative;
+    }
+
+    .hero-brand-top {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+
+    /* 30% SCALE BOOST HERO EMBLEM LOGO */
+    .hero-logo-emblem {
+      width: 115px; /* Boosted by 30% from old size */
+      height: 115px;
+      border-radius: 26px;
+      overflow: hidden;
+      border: 1px solid var(--border-color);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+      background: #FFFFFF;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.4s ease;
+    }
+
+    .hero-logo-emblem:hover {
+      transform: scale(1.05);
+    }
+
+    .hero-logo-emblem img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      padding: 8px;
     }
 
     .top-label {
       font-family: var(--font-tag);
-      font-size: clamp(10px, 2.5vw, 12px);
-      font-weight: 800;
-      color: var(--primary-blue);
+      font-size: 11px;
+      color: var(--accent-indigo);
       text-transform: uppercase;
-      letter-spacing: 0.2em;
-      margin-bottom: 20px;
-      background: linear-gradient(90deg, var(--primary-blue), #8a2be2);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+      letter-spacing: 0.15em;
+      margin-bottom: 24px;
     }
 
     .h1-title {
-      font-size: clamp(32px, 5.5vw, 58px);
-      font-weight: 800;
-      letter-spacing: -0.03em;
+      font-size: clamp(32px, 5.5vw, 54px);
+      letter-spacing: -0.025em;
       line-height: 1.15;
-      max-width: 920px;
-      margin: 0 auto 24px auto;
+      max-width: 820px;
+      margin: 0 auto 28px auto;
       color: var(--text-main);
     }
 
     .paragraph-deck {
-      font-size: clamp(16px, 3vw, 20px);
+      font-size: clamp(16px, 3.2vw, 19px);
       color: var(--text-muted);
-      max-width: 680px;
-      margin: 0 auto 40px auto;
+      max-width: 620px;
+      margin: 0 auto 44px auto;
       line-height: 1.6;
     }
 
@@ -295,20 +378,18 @@
     }
 
     .btn-solid {
-      background: var(--rich-obsidian);
-      color: #FFFFFF;
+      background: var(--text-main);
+      color: var(--canvas-bg);
       border: none;
-      padding: 16px 36px;
+      padding: 15px 30px;
       border-radius: 100px;
-      font-size: 15px;
-      font-weight: 600;
+      font-size: 14px;
       cursor: pointer;
       transition: background-color 0.2s, transform 0.1s;
-      box-shadow: 0 4px 14px rgba(0,0,0,0.1);
     }
 
     .btn-solid:hover {
-      background-color: #222222;
+      opacity: 0.9;
     }
 
     .btn-solid:active {
@@ -316,23 +397,26 @@
     }
 
     .btn-outline {
-      background: #FFFFFF;
+      background: transparent;
       color: var(--text-main);
       border: 1.5px solid var(--border-color);
-      padding: 15px 34px;
+      padding: 14px 28px;
       border-radius: 100px;
-      font-size: 15px;
-      font-weight: 600;
+      font-size: 14px;
       cursor: pointer;
-      transition: all 0.2s ease;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
+      transition: background-color 0.2s, border-color 0.2s;
     }
 
     .btn-outline:hover {
-      background-color: var(--sf-gray);
-      border-color: var(--text-light);
+      background-color: rgba(0, 0, 0, 0.03);
+      border-color: var(--text-main);
+    }
+    
+    body.dark .btn-outline:hover {
+      background-color: rgba(255, 255, 255, 0.05);
     }
 
+    /* Conflict / Resolution Grid */
     .comparison-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -341,51 +425,41 @@
     }
 
     .comp-card {
-      padding: 48px;
-      border-radius: 24px;
-      transition: transform 0.3s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.3s ease;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      border: 1px solid transparent;
+      padding: 56px;
+      border-radius: 28px;
+      transition: transform 0.3s ease;
     }
 
     .comp-card:hover {
-      transform: translateY(-5px);
+      transform: translateY(-4px);
     }
 
     .comp-card.friction {
       background: var(--friction-bg);
-      border-color: #FFE5E5;
-      box-shadow: 0 8px 24px rgba(255, 59, 48, 0.03);
+      border: 1px solid var(--friction-border);
     }
 
     .comp-card.flow {
-      background: linear-gradient(135deg, #F0F6FF 0%, #EAFBF9 100%);
-      border-color: #D3E4FD;
-      box-shadow: 0 8px 24px rgba(0, 102, 204, 0.04);
+      background: var(--flow-bg);
+      border: 1px solid var(--flow-border);
     }
 
     .comp-card h3 {
-      font-size: 24px;
-      font-weight: 700;
-      margin-bottom: 16px;
+      font-size: 26px;
+      margin-bottom: 18px;
       letter-spacing: -0.015em;
       color: var(--text-main);
-      display: flex;
-      align-items: center;
-      gap: 10px;
     }
 
     .comp-card p {
-      font-size: 15.5px;
+      font-size: 15px;
       color: var(--text-muted);
       line-height: 1.65;
     }
 
+    /* Metrics & Testimonial Layout Frame */
     .metrics-header {
-      font-size: clamp(24px, 4vw, 34px);
-      font-weight: 800;
+      font-size: 28px;
       letter-spacing: -0.02em;
       margin-bottom: 48px;
       text-align: center;
@@ -394,57 +468,50 @@
     .metrics-container {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 32px;
+      gap: 40px;
       margin-bottom: 100px;
     }
 
     .metric-card {
-      background: linear-gradient(180deg, #FFFFFF 0%, #F5F7FB 100%);
-      border: 1px solid var(--pastel-blue-border);
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
       border-radius: 20px;
-      padding: 44px 32px;
-      text-align: center;
-      transition: all 0.3s ease;
-      box-shadow: 0 4px 12px rgba(0, 102, 204, 0.02);
+      padding: 40px;
+      transition: box-shadow 0.3s ease, border-color 0.3s ease;
     }
 
     .metric-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 12px 30px rgba(0, 102, 204, 0.06);
-      border-color: var(--primary-blue);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+      border-color: var(--text-light);
     }
 
     .metric-number {
-      font-size: clamp(40px, 6vw, 56px);
-      font-weight: 800;
-      letter-spacing: -0.04em;
-      margin-bottom: 10px;
-      background: linear-gradient(135deg, var(--rich-obsidian) 20%, var(--primary-blue));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+      font-size: 52px;
+      letter-spacing: -0.03em;
+      margin-bottom: 12px;
+      color: var(--text-main);
     }
 
     .metric-label {
-      font-size: 14.5px;
+      font-size: 14px;
       color: var(--text-muted);
       line-height: 1.5;
-      font-weight: 500;
     }
 
+    /* Reels Showcase Section styling */
     .reels-section {
       margin-bottom: 100px;
     }
 
     .reels-header {
-      font-size: clamp(24px, 4vw, 34px);
-      font-weight: 800;
+      font-size: 28px;
       letter-spacing: -0.02em;
       margin-bottom: 12px;
       text-align: center;
     }
 
     .reels-subheader {
-      font-size: 16px;
+      font-size: 15px;
       color: var(--text-light);
       text-align: center;
       margin-bottom: 48px;
@@ -453,7 +520,7 @@
     .reels-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 28px;
+      gap: 24px;
     }
 
     .reel-card {
@@ -462,7 +529,7 @@
       background: #000000;
       border-radius: 24px;
       overflow: hidden;
-      box-shadow: 0 16px 40px rgba(0,0,0,0.08);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.08);
       border: 1px solid var(--border-color);
       cursor: pointer;
     }
@@ -475,6 +542,7 @@
       background: #000;
     }
 
+    /* Fallback display if video not loaded */
     .reel-card .video-placeholder {
       position: absolute;
       inset: 0;
@@ -482,12 +550,11 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      background: #111;
-      color: #fff;
+      background: #141416;
+      color: #999;
       font-size: 13px;
-      font-weight: 600;
       text-align: center;
-      padding: 24px;
+      padding: 20px;
       z-index: 2;
     }
 
@@ -496,11 +563,11 @@
     }
 
     .video-placeholder-icon {
-      font-size: 40px;
-      margin-bottom: 16px;
+      font-size: 32px;
+      margin-bottom: 12px;
     }
 
-    /* Premium ENLARGED Video Interaction Overlays */
+    /* Premium ENLARGED custom video interaction controls */
     .video-interactive-overlay {
       position: absolute;
       inset: 0;
@@ -510,18 +577,12 @@
       justify-content: space-between;
       padding: 24px;
       opacity: 0;
-      transition: opacity 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+      transition: opacity 0.25s ease;
       z-index: 5;
     }
 
     .reel-card:hover .video-interactive-overlay {
       opacity: 1;
-    }
-
-    @media (hover: none) {
-      .video-interactive-overlay {
-        opacity: 0.95;
-      }
     }
 
     .video-top-controls {
@@ -542,41 +603,40 @@
       -webkit-backdrop-filter: blur(12px);
       color: #ffffff;
       font-size: 11px;
-      font-weight: 700;
       padding: 6px 12px;
       border-radius: 100px;
       letter-spacing: 0.08em;
       text-transform: uppercase;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     }
 
+    /* Large tap targets for simple controls */
     .video-action-btn {
       background: rgba(0, 0, 0, 0.5);
       backdrop-filter: blur(16px);
       -webkit-backdrop-filter: blur(16px);
-      border: 1px solid rgba(255, 255, 255, 0.25);
+      border: 1.5px solid rgba(255, 255, 255, 0.25);
       border-radius: 50%;
-      width: 48px;
-      height: 48px;
+      width: 52px; /* Large highly click-friendly diameter */
+      height: 52px;
       display: flex;
       align-items: center;
       justify-content: center;
       cursor: pointer;
       color: #ffffff;
-      transition: background 0.25s, transform 0.15s, border-color 0.25s;
+      transition: background 0.2s, transform 0.1s, border-color 0.2s;
       box-shadow: 0 4px 12px rgba(0,0,0,0.2);
       -webkit-tap-highlight-color: transparent;
     }
 
     .video-action-btn svg {
-      width: 20px;
-      height: 20px;
-      stroke-width: 2.5;
+      width: 22px;
+      height: 22px;
+      stroke-width: 2.5; /* Bolder visibility stroke */
     }
 
     .video-action-btn:hover {
-      background: rgba(255, 255, 255, 0.25);
-      border-color: rgba(255, 255, 255, 0.6);
+      background: rgba(255, 255, 255, 0.3);
+      border-color: rgba(255, 255, 255, 0.7);
       transform: scale(1.08);
     }
 
@@ -584,17 +644,18 @@
       transform: scale(0.92);
     }
 
+    /* Volume/Status Toast Indicator */
     .video-status-toast {
       position: absolute;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%) scale(0.8);
-      background: rgba(0, 0, 0, 0.8);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
+      background: rgba(0, 0, 0, 0.75);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
       border-radius: 50%;
-      width: 72px;
-      height: 72px;
+      width: 64px;
+      height: 64px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -603,12 +664,6 @@
       pointer-events: none;
       transition: opacity 0.3s, transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
       z-index: 10;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-    }
-
-    .video-status-toast svg {
-      width: 28px;
-      height: 28px;
     }
 
     .video-status-toast.show {
@@ -616,36 +671,35 @@
       transform: translate(-50%, -50%) scale(1);
     }
 
+    /* Client Testimonial Carousel Section */
     .testimonial-carousel {
-      background: linear-gradient(135deg, #F5F7FB 0%, #FAF6FC 100%);
+      background: var(--bg-card);
       border-radius: 28px;
-      padding: 64px;
+      padding: 60px;
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 6fr 4fr;
       gap: 60px;
       align-items: center;
       margin-bottom: 40px;
-      border: 1px solid var(--pastel-blue-border);
-      box-shadow: 0 12px 36px rgba(0, 102, 204, 0.03);
+      border: 1px solid var(--border-color);
     }
 
     .testimonial-review {
-      font-size: clamp(18px, 3.5vw, 24px);
-      font-weight: 500;
+      font-size: 22px;
       line-height: 1.5;
-      letter-spacing: -0.015em;
+      letter-spacing: -0.01em;
       color: var(--text-main);
     }
 
     .testimonial-author {
       margin-top: 24px;
       font-size: 14px;
-      font-weight: 700;
-      color: var(--primary-blue);
+      color: var(--text-light);
       text-transform: uppercase;
-      letter-spacing: 0.08em;
+      letter-spacing: 0.05em;
     }
 
+    /* Bottom Video Block (Imported showcase container) */
     .video-testimonial-block {
       background: #0A0A0A;
       border-radius: 24px;
@@ -655,7 +709,7 @@
       width: 100%;
       box-shadow: 0 20px 48px rgba(0,0,0,0.15);
       cursor: pointer;
-      border: 1px solid rgba(255, 255, 255, 0.1);
+      border: 1.5px solid rgba(255, 255, 255, 0.1);
     }
 
     .testimonial-live-video {
@@ -682,15 +736,15 @@
     }
 
     .play-giant-btn {
-      width: 80px;
-      height: 80px;
+      width: 84px;
+      height: 84px;
       background: #FFFFFF;
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
       box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-      color: var(--rich-obsidian);
+      color: #111827;
       transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     }
 
@@ -723,6 +777,7 @@
       z-index: 6;
     }
 
+    /* FRAME 2: Portfolio & Founder Biography Layout */
     .split-grid {
       display: grid;
       grid-template-columns: 4.5fr 7.5fr;
@@ -755,15 +810,13 @@
     }
 
     .bio-stack h2 {
-      font-size: clamp(28px, 4.5vw, 38px);
-      font-weight: 800;
-      letter-spacing: -0.02em;
+      font-size: 38px;
       margin-bottom: 20px;
       color: var(--text-main);
     }
 
     .bio-text {
-      font-size: 16.5px;
+      font-size: 16px;
       color: var(--text-muted);
       line-height: 1.65;
       margin-bottom: 28px;
@@ -772,27 +825,25 @@
     .accent-badge {
       display: inline-flex;
       align-items: center;
-      background: linear-gradient(135deg, #FFF9F2 0%, #FFF2E0 100%);
-      padding: 8px 18px;
+      background: var(--bg-card);
+      padding: 8px 16px;
       border-radius: 100px;
-      font-size: 13.5px;
-      font-weight: 700;
-      color: #B25E00;
-      border: 1px solid #FFE3C0;
+      font-size: 13px;
+      color: var(--text-main);
+      border: 1px solid var(--border-color);
     }
 
+    /* Soft skill progress lines */
     .skills-stack {
       margin-bottom: 100px;
-      background: #FFFFFF;
+      background: var(--bg-card);
       border: 1px solid var(--border-color);
       padding: 48px;
       border-radius: 28px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.02);
     }
 
     .skills-stack h3 {
-      font-size: 22px;
-      font-weight: 800;
+      font-size: 20px;
       margin-bottom: 32px;
       letter-spacing: -0.01em;
     }
@@ -808,33 +859,35 @@
     .skill-meta {
       display: flex;
       justify-content: space-between;
-      font-size: 14px;
-      font-weight: 600;
+      font-size: 13.5px;
       margin-bottom: 10px;
       color: var(--text-main);
     }
 
     .progress-bar {
-      height: 8px;
+      height: 6px;
       background: #EAEAEA;
       border-radius: 100px;
       overflow: hidden;
     }
+    
+    body.dark .progress-bar {
+      background: #374151;
+    }
 
     .progress-fill {
       height: 100%;
-      background: var(--slate-accent);
+      background: var(--text-light);
       border-radius: 100px;
-      transition: width 1s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
+    /* History Track timeline Layout */
     .timeline-container {
       margin-bottom: 100px;
     }
 
     .timeline-container h3 {
-      font-size: 22px;
-      font-weight: 800;
+      font-size: 20px;
       margin-bottom: 36px;
       letter-spacing: -0.01em;
     }
@@ -854,8 +907,7 @@
     }
 
     .role-meta h4 {
-      font-size: 17px;
-      font-weight: 800;
+      font-size: 16px;
       color: var(--text-main);
     }
 
@@ -867,259 +919,189 @@
     }
 
     .role-desc {
-      font-size: 15.5px;
+      font-size: 15px;
       color: var(--text-muted);
       line-height: 1.65;
     }
 
+    .showcase-header h3 {
+      font-size: 20px;
+      margin-bottom: 28px;
+    }
 
-    .services-header {
+
+    /* NEW ULTRA-CLEAN MODERN SERVICES DECK */
+    .services-intro {
       text-align: center;
-      max-width: 800px;
+      max-width: 720px;
       margin: 0 auto 60px auto;
     }
 
-    .services-header h2 {
-      font-size: clamp(28px, 5vw, 42px);
-      font-weight: 800;
-      letter-spacing: -0.03em;
+    .services-intro h2 {
+      font-size: clamp(28px, 4.5vw, 38px);
+      letter-spacing: -0.025em;
       margin-bottom: 16px;
+      color: var(--text-main);
     }
 
-    .services-header p {
-      font-size: 17px;
+    .services-intro p {
+      font-size: 16.5px;
       color: var(--text-muted);
       line-height: 1.6;
     }
 
-    .services-grid-container {
+    .services-deck {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 32px;
+      grid-template-columns: 1fr;
+      gap: 36px;
       margin-bottom: 80px;
     }
 
-    .services-grid-container .service-premium-card.span-full {
-      grid-column: span 2;
-    }
-
-    .service-premium-card {
+    .service-premium-row {
+      background: var(--bg-card);
       border: 1px solid var(--border-color);
       border-radius: 24px;
-      padding: 44px;
-      transition: all 0.35s cubic-bezier(0.165, 0.84, 0.44, 1);
+      padding: 48px;
+      display: grid;
+      grid-template-columns: 4.5fr 7.5fr;
+      gap: 48px;
+      transition: transform 0.3s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.3s ease, border-color 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .service-premium-row:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 30px rgba(15, 23, 42, 0.04);
+      border-color: var(--accent-indigo);
+    }
+
+    /* Assigning premium thin modern color bounds */
+    .service-premium-row:nth-child(1) { border-left: 5px solid var(--accent-blue); }
+    .service-premium-row:nth-child(2) { border-left: 5px solid var(--accent-indigo); }
+    .service-premium-row:nth-child(3) { border-left: 5px solid var(--accent-teal); }
+    .service-premium-row:nth-child(4) { border-left: 5px solid var(--accent-violet); }
+    .service-premium-row:nth-child(5) { border-left: 5px solid var(--accent-slate); }
+
+    .service-meta-left {
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      position: relative;
-      overflow: hidden;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.01);
     }
 
-    /* Assigning delicate pastel backgrounds to service cards */
-    .service-premium-card:nth-child(1) {
-      background: var(--pastel-blue-bg);
-      border-color: var(--pastel-blue-border);
-    }
-    .service-premium-card:nth-child(2) {
-      background: var(--pastel-purple-bg);
-      border-color: var(--pastel-purple-border);
-    }
-    .service-premium-card:nth-child(3) {
-      background: var(--pastel-teal-bg);
-      border-color: var(--pastel-teal-border);
-    }
-    .service-premium-card:nth-child(4) {
-      background: var(--pastel-amber-bg);
-      border-color: var(--pastel-amber-border);
-    }
-    .service-premium-card:nth-child(5) {
-      background: var(--pastel-indigo-bg);
-      border-color: var(--pastel-indigo-border);
-    }
-
-    .service-premium-card::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 4px;
-      height: 100%;
-      background: var(--rich-obsidian);
-      opacity: 0;
-      transition: opacity 0.3s ease;
-    }
-
-    .service-premium-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 20px 40px rgba(0,0,0,0.04);
-    }
-
-    .service-premium-card:hover::before {
-      opacity: 1;
-    }
-
-    .service-card-header {
+    .service-header-group {
       display: flex;
-      align-items: flex-start;
-      justify-content: space-between;
-      margin-bottom: 28px;
-    }
-
-    .service-icon-box {
-      width: 56px;
-      height: 56px;
-      border-radius: 14px;
-      background: #FFFFFF;
-      color: var(--rich-obsidian);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: background-color 0.3s, color 0.3s;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.04);
-    }
-
-    .service-premium-card:hover .service-icon-box {
-      background: var(--rich-obsidian);
-      color: #FFFFFF;
-    }
-
-    .service-icon-box svg {
-      width: 26px;
-      height: 26px;
-      stroke-width: 2;
-    }
-
-    .service-badge {
-      background: rgba(255, 255, 255, 0.6);
-      padding: 6px 14px;
-      border-radius: 100px;
-      font-size: 11px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: var(--text-light);
-      border: 1px solid rgba(0,0,0,0.05);
-    }
-
-    .service-premium-card:hover .service-badge {
-      background: var(--rich-obsidian);
-      color: #FFFFFF;
-    }
-
-    .service-card-body h3 {
-      font-size: 24px;
-      font-weight: 800;
-      letter-spacing: -0.02em;
-      margin-bottom: 12px;
-      color: var(--text-main);
-    }
-
-    .service-card-desc {
-      font-size: 15px;
-      color: var(--text-muted);
-      line-height: 1.5;
-      margin-bottom: 28px;
-    }
-
-    .service-features-list {
-      list-style-type: none;
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 14px;
-      border-top: 1px solid rgba(0,0,0,0.05);
-      padding-top: 24px;
-    }
-
-    .services-grid-container .service-premium-card.span-full .service-features-list {
-      grid-template-columns: 1fr 1fr;
+      flex-direction: column;
       gap: 16px;
     }
 
-    .service-features-list li {
-      font-size: 14.5px;
-      color: var(--text-main);
-      display: flex;
-      align-items: flex-start;
-      gap: 10px;
-      line-height: 1.4;
-    }
-
-    .service-features-list li svg {
-      width: 18px;
-      height: 18px;
-      color: var(--success-green);
-      flex-shrink: 0;
-      margin-top: 1px;
-    }
-
-    .workflow-section {
-      background: linear-gradient(135deg, #F5F7FB 0%, #F1FBF9 100%);
-      border-radius: 28px;
-      padding: 56px;
-      margin-bottom: 80px;
-      border: 1px solid var(--pastel-teal-border);
-      box-shadow: 0 8px 24px rgba(0, 210, 196, 0.02);
-    }
-
-    .workflow-title {
-      font-size: 24px;
-      font-weight: 800;
-      text-align: center;
-      margin-bottom: 40px;
-      letter-spacing: -0.02em;
-    }
-
-    .workflow-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 24px;
-    }
-
-    .workflow-step {
-      position: relative;
-    }
-
-    .workflow-step:not(:last-child)::after {
-      content: "";
-      position: absolute;
-      top: 24px;
-      right: -12px;
-      width: 24px;
-      height: 1px;
-      border-top: 2px dashed rgba(0, 0, 0, 0.1);
-      z-index: 1;
-    }
-
-    .step-number {
-      width: 48px;
-      height: 48px;
-      border-radius: 50%;
-      background: var(--rich-obsidian);
-      color: #FFFFFF;
-      font-size: 16px;
-      font-weight: 700;
+    .service-icon-wrapper {
+      width: 56px;
+      height: 56px;
+      border-radius: 16px;
       display: flex;
       align-items: center;
       justify-content: center;
-      margin-bottom: 20px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      margin-bottom: 8px;
+      transition: transform 0.3s ease;
     }
 
-    .step-title {
-      font-size: 16px;
-      font-weight: 700;
-      margin-bottom: 8px;
+    .service-premium-row:hover .service-icon-wrapper {
+      transform: scale(1.08);
+    }
+
+    /* Clean modern icon tints */
+    .service-premium-row:nth-child(1) .service-icon-wrapper { background: var(--accent-blue-bg); color: var(--accent-blue); }
+    .service-premium-row:nth-child(2) .service-icon-wrapper { background: var(--accent-indigo-bg); color: var(--accent-indigo); }
+    .service-premium-row:nth-child(3) .service-icon-wrapper { background: var(--accent-teal-bg); color: var(--accent-teal); }
+    .service-premium-row:nth-child(4) .service-icon-wrapper { background: var(--accent-violet-bg); color: var(--accent-violet); }
+    .service-premium-row:nth-child(5) .service-icon-wrapper { background: var(--accent-slate-bg); color: var(--accent-slate); }
+
+    .service-meta-left h3 {
+      font-size: 26px;
+      letter-spacing: -0.015em;
       color: var(--text-main);
     }
 
-    .step-desc {
-      font-size: 13.5px;
+    .service-tag {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--text-light);
+    }
+
+    .service-meta-left .service-desc {
+      font-size: 14.5px;
       color: var(--text-muted);
       line-height: 1.5;
+      margin-top: 12px;
+    }
+
+    .service-action-link {
+      margin-top: 24px;
+      font-size: 13.5px;
+      color: var(--accent-indigo);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: color 0.2s;
+    }
+
+    .service-action-link:hover {
+      color: var(--text-main);
+    }
+
+    /* Deliverables block styling */
+    .service-deliverables-right {
+      border-left: 1px solid var(--border-color);
+      padding-left: 48px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .service-deliverables-right h4 {
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--text-light);
+      margin-bottom: 20px;
+    }
+
+    .classic-delivery-list {
+      list-style-type: none;
+    }
+
+    .classic-delivery-list li {
+      font-size: 15px;
+      color: var(--text-muted);
+      line-height: 1.6;
+      margin-bottom: 16px;
+      position: relative;
+      padding-left: 28px;
+      display: flex;
+      align-items: flex-start;
+    }
+
+    .classic-delivery-list li:last-child {
+      margin-bottom: 0;
+    }
+
+    .classic-delivery-list li::before {
+      content: "";
+      position: absolute;
+      left: 2px;
+      top: 6px;
+      width: 12px;
+      height: 6px;
+      border-left: 2px solid var(--accent-indigo);
+      border-bottom: 2px solid var(--accent-indigo);
+      transform: rotate(-45deg);
     }
 
 
+    /* Team Section Styles */
     .team-section {
       margin-top: 80px;
       border-top: 1px solid var(--border-color);
@@ -1128,8 +1110,7 @@
 
     .team-header-title {
       font-size: 32px;
-      font-weight: 800;
-      letter-spacing: -0.025em;
+      letter-spacing: -0.020em;
       text-align: center;
       margin-bottom: 12px;
       color: var(--text-main);
@@ -1178,7 +1159,6 @@
 
     .team-name {
       font-size: 18px;
-      font-weight: 700;
       color: var(--text-main);
       margin-bottom: 4px;
     }
@@ -1186,11 +1166,11 @@
     .team-role {
       font-size: 13.5px;
       color: var(--text-light);
-      font-weight: 500;
     }
 
+    /* Global Obsidian Black Footer */
     footer {
-      background: var(--rich-obsidian);
+      background: #090E1A; /* Luxe Velvet Charcoal Navy */
       color: #FFFFFF;
       padding: 80px 40px 60px 40px;
       margin-top: auto;
@@ -1205,7 +1185,7 @@
       display: flex;
       justify-content: space-between;
       align-items: flex-start;
-      border-bottom: 1px solid #1E1E1F;
+      border-bottom: 1px solid #1E293B;
       padding-bottom: 60px;
       margin-bottom: 40px;
     }
@@ -1226,11 +1206,17 @@
       filter: invert(1);
     }
 
+    /* BRAND VISIBILITY RECOVERY STYLE FOR THE FOOTER */
+    footer .brand-name {
+      background: none !important;
+      -webkit-text-fill-color: #FFFFFF !important;
+      color: #FFFFFF !important;
+    }
+
     .footer-tagline {
       font-family: var(--font-tag);
       font-size: 11px;
-      font-weight: 800;
-      color: #888888;
+      color: #94A3B8;
       letter-spacing: 0.2em;
     }
 
@@ -1247,14 +1233,13 @@
 
     .footer-nav-col span {
       font-size: 11px;
-      color: #555555;
-      font-weight: 700;
+      color: #64748B;
       text-transform: uppercase;
       letter-spacing: 0.1em;
     }
 
     .footer-nav-col a {
-      color: #AEAEB2;
+      color: #94A3B8;
       text-decoration: none;
       font-size: 13.5px;
       transition: color 0.2s;
@@ -1265,6 +1250,7 @@
       color: #FFFFFF;
     }
 
+    /* Contact Matrix Frame */
     .contact-matrix {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
@@ -1279,16 +1265,14 @@
 
     .matrix-label {
       font-size: 11px;
-      color: #555555;
+      color: #64748B;
       text-transform: uppercase;
       letter-spacing: 0.08em;
-      font-weight: 700;
     }
 
     .matrix-value {
       font-size: 15px;
-      color: #E5E5E7;
-      font-weight: 400;
+      color: #E2E8F0;
       text-decoration: none;
       transition: color 0.2s;
     }
@@ -1298,67 +1282,69 @@
       text-decoration: underline;
     }
 
-    /* Responsive Viewports */
-    @media (max-width: 1024px) {
-      .services-grid-container {
-        grid-template-columns: 1fr;
-      }
-      .services-grid-container .service-premium-card.span-full {
-        grid-column: auto;
-      }
-      .services-grid-container .service-premium-card.span-full .service-features-list {
-        grid-template-columns: 1fr;
-      }
-      .workflow-grid {
-        grid-template-columns: 1fr 1fr;
-        gap: 32px;
-      }
-      .workflow-step:not(:last-child)::after {
-        display: none;
-      }
-    }
-
+    /* Perfect Responsive Viewports with Top Right CTA & Theme on Mobile */
     @media (max-width: 900px) {
       header { 
-        padding: 0 20px; 
-        height: 68px;
+        display: grid;
+        grid-template-columns: 1fr auto; /* Force Logo to Left, CTA/Theme to Right on Top Line */
+        grid-template-rows: auto auto; /* Drop tab-switcher on the second line */
+        height: auto;
+        padding: 16px 20px;
+        gap: 16px 0;
       }
+      
+      .nav-left {
+        grid-column: 1;
+        grid-row: 1;
+        justify-self: start;
+      }
+      
+      .nav-right {
+        grid-column: 2;
+        grid-row: 1;
+        justify-self: end;
+      }
+      
+      .tab-switcher {
+        grid-column: span 2;
+        grid-row: 2;
+        justify-self: center;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+      }
+
       .tab-frame { padding: 40px 16px; }
       .h1-title { font-size: 34px; }
+      
       .comparison-grid, .split-grid, .timeline-item, .testimonial-carousel, .team-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+
+      /* Services mobile adjustment */
+      .service-premium-row {
+        grid-template-columns: 1fr;
+        gap: 32px;
+        padding: 32px;
+      }
+
+      .service-deliverables-right {
+        border-left: none;
+        border-top: 1px solid var(--border-color);
+        padding-left: 0;
+        padding-top: 32px;
+      }
+      
+      .metrics-container, .reels-grid, .footer-top, .contact-matrix {
         grid-template-columns: 1fr;
         gap: 32px;
       }
-      .metrics-container, .reels-grid, .footer-top, .contact-matrix {
-        grid-template-columns: 1fr;
-        gap: 36px;
-      }
+      
       .footer-nav { gap: 32px; }
       .portrait-mask {
-        width: 220px;
-        height: 220px;
-      }
-      .workflow-grid {
-        grid-template-columns: 1fr;
-      }
-      .btn-solid, .btn-outline {
-        width: 100%;
-        text-align: center;
-      }
-      .tab-switcher {
-        width: 100%;
-        order: 3;
-        margin-top: 10px;
-      }
-      header {
-        flex-wrap: wrap;
-        height: auto;
-        padding: 12px 16px;
-        gap: 12px;
-      }
-      .nav-right {
-        display: flex;
-        justify-content: flex-end;
+        width: 240px;
+        height: 240px;
       }
     }
   </style>
@@ -1369,7 +1355,7 @@
   <header>
     <a href="#" class="nav-left" onclick="switchTab('home'); return false;">
       <div class="logo-container">
-        <img src="logo.jpeg" onerror="this.src='https://placehold.co/150x150/0a0a0a/ffffff?text=GSF'" alt="GOSOCIALFLOW emblem Logo" class="logo-img">
+        <img src="logo.jpeg" onerror="this.src='https://placehold.co/100x100/0a0a0a/ffffff?text=GSF'" alt="GOSOCIALFLOW emblem Logo" class="logo-img">
       </div>
       <span class="brand-name">GOSOCIALFLOW</span>
     </a>
@@ -1382,6 +1368,13 @@
     </div>
 
     <div class="nav-right">
+      <!-- Theme Switcher Button -->
+      <button class="theme-toggle-btn" onclick="toggleTheme()" aria-label="Toggle Theme">
+        <!-- Sun Icon (visible in dark mode) -->
+        <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display: none;"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+        <!-- Moon Icon (visible in light mode) -->
+        <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+      </button>
       <button class="btn-pill" onclick="scrollToFooter()">Get in Touch</button>
     </div>
   </header>
@@ -1396,7 +1389,6 @@
           <div class="hero-logo-emblem">
             <img src="logo.jpeg" onerror="this.src='https://placehold.co/100x100/0a0a0a/ffffff?text=GSF'" alt="GOSOCIALFLOW Emblem Logo">
           </div>
-          <span class="hero-brand-title">GOSOCIALFLOW</span>
         </div>
         <div class="top-label">We Create. We Manage. We Grow.</div>
         <h1 class="h1-title">Your Entire Digital Growth Engine. Managed by One Team.</h1>
@@ -1411,14 +1403,14 @@
       <div class="comparison-grid">
         <div class="comp-card friction">
           <h3>
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: #FF3B30;"><circle cx="12" cy="12" r="10"></circle><line x1="15" y1="9" x2="9" y2="15"></line><line x1="9" y1="9" x2="15" y2="15"></line></svg>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="color: #FF3B30;"><circle cx="12" cy="12" r="10"></circle><line x1="15" y1="9" x2="9" y2="15"></line><line x1="9" y1="9" x2="15" y2="15"></line></svg>
             Fragmented Freelancers
           </h3>
           <p>Mismatched layouts, missed delivery deadlines, unoptimized ad spend, and disjointed brand voice under uncoordinated operators.</p>
         </div>
         <div class="comp-card flow">
           <h3>
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--success-green);"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="color: var(--success-green);"><polyline points="20 6 9 17 4 12"></polyline></svg>
             Go Social Flow
           </h3>
           <p>One centralized technical pipeline synchronizing content creation, web platforms, and paid marketing pipelines perfectly to scale business metrics.</p>
@@ -1442,10 +1434,10 @@
         </div>
       </div>
 
-      <!-- Creative Showcase Intro -->
-      <section style="text-align: center; margin: 80px auto; max-width: 700px; padding: 0 16px;">
-        <p style="font-size: clamp(16px, 2.8vw, 19px); color: var(--text-muted); line-height: 1.6;">
-          We specialize in capturing high-impact visuals for cafes, real estate ventures, brands, and premium weddings. Explore our creative showcase below.
+      <!-- New Improved Creative Showcase Intro -->
+      <section style="text-align: center; margin: 80px auto; max-width: 700px; padding: 0 24px;">
+        <p style="font-size: 18px; color: var(--text-muted); line-height: 1.6;">
+          We specialize in capturing high-impact visuals for cafes, real estate ventures, influencers, and grand weddings. Explore our creative showcase below.
         </p>
       </section>
 
@@ -1470,10 +1462,10 @@
               </div>
               <div class="video-bottom-controls">
                 <button class="video-action-btn toggle-mute-btn" title="Toggle Sound">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5L6 9H2v6h4l5 4V5z"></path><line x1="23" y1="9" x2="17" y2="15"></line><line x1="17" y1="9" x2="23" y2="15"></line></svg>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5L6 9H2v6h4l5 4V5z"></path><line x1="23" y1="9" x2="17" y2="15"></line><line x1="17" y1="9" x2="23" y2="15"></line></svg>
                 </button>
                 <button class="video-action-btn fullscreen-video-btn" title="Fullscreen">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"></path></svg>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"></path></svg>
                 </button>
               </div>
             </div>
@@ -1497,10 +1489,10 @@
               </div>
               <div class="video-bottom-controls">
                 <button class="video-action-btn toggle-mute-btn" title="Toggle Sound">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5L6 9H2v6h4l5 4V5z"></path><line x1="23" y1="9" x2="17" y2="15"></line><line x1="17" y1="9" x2="23" y2="15"></line></svg>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5L6 9H2v6h4l5 4V5z"></path><line x1="23" y1="9" x2="17" y2="15"></line><line x1="17" y1="9" x2="23" y2="15"></line></svg>
                 </button>
                 <button class="video-action-btn fullscreen-video-btn" title="Fullscreen">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"></path></svg>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"></path></svg>
                 </button>
               </div>
             </div>
@@ -1524,10 +1516,10 @@
               </div>
               <div class="video-bottom-controls">
                 <button class="video-action-btn toggle-mute-btn" title="Toggle Sound">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5L6 9H2v6h4l5 4V5z"></path><line x1="23" y1="9" x2="17" y2="15"></line><line x1="17" y1="9" x2="23" y2="15"></line></svg>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5L6 9H2v6h4l5 4V5z"></path><line x1="23" y1="9" x2="17" y2="15"></line><line x1="17" y1="9" x2="23" y2="15"></line></svg>
                 </button>
                 <button class="video-action-btn fullscreen-video-btn" title="Fullscreen">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"></path></svg>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"></path></svg>
                 </button>
               </div>
             </div>
@@ -1557,7 +1549,7 @@
             <div class="play-giant-btn">
               <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
             </div>
-            <span style="color: #ffffff; margin-top: 16px; font-weight: 700; font-size: 14px; text-transform: uppercase; letter-spacing: 0.1em; background: rgba(0,0,0,0.6); padding: 4px 12px; border-radius: 100px;">Click to Play & Unmute</span>
+            <span style="color: #ffffff; margin-top: 16px; font-weight: 700; font-size: 13px; text-transform: uppercase; letter-spacing: 0.1em; background: rgba(0,0,0,0.6); padding: 4px 12px; border-radius: 100px;">Click to Play & Unmute</span>
           </div>
 
           <!-- Quick Audio Action Control -->
@@ -1573,12 +1565,12 @@
       <div class="split-grid">
         <div class="portrait-frame">
           <div class="portrait-mask">
-            <img src="raj.jpeg" onerror="this.src='https://placehold.co/300x300/f5f5f7/0a0a0a?text=Raj+Ajankar'" alt="Raj Ajankar Executive Portrait" class="portrait-img">
+            <img src="raj.jpeg" onerror="this.src='https://placehold.co/300x300/faf9f6/111827?text=Raj+Ajankar'" alt="Raj Ajankar Executive Portrait" class="portrait-img">
           </div>
         </div>
         <div class="bio-stack">
           <h2>Meet the Founder</h2>
-          <p class="bio-text">I'm Raj Ajankar, Co-Founder of Go Social Flow. As a B.Tech Electronics Engineering student at Yeshwantrao Chavan College of Engineering (YCCE), I approach digital media with engineering precision and high-retention creative instinct.</p>
+          <p class="bio-text">I'm Raj Ajankar, Founder of Go Social Flow. As a B.Tech Electronics Engineering student at Yeshwantrao Chavan College of Engineering (YCCE), I approach digital media with engineering precision and high-retention creative instinct.</p>
           <div class="accent-badge">🏆 1st Place - Reel-o-mania Editing Champion</div>
         </div>
       </div>
@@ -1606,7 +1598,7 @@
         <div class="timeline-item">
           <div class="role-meta">
             <h4>Go Social Flow</h4>
-            <span>Co-Founder · 2024 - Present</span>
+            <span>Founder · 2024 - Present</span>
           </div>
           <div class="role-desc">Directing full-stack creative execution cycles and platform marketing infrastructure to maintain seamless, metrics-driven client operations.</div>
         </div>
@@ -1621,7 +1613,7 @@
 
       <!-- Media Showcase Grid -->
       <div class="showcase-header">
-        <h3 style="font-size: 20px; font-weight: 800; margin-bottom: 24px;">Selected Creative Assets</h3>
+        <h3>Selected Creative Assets</h3>
         <div class="reels-grid">
           
           <!-- Reel Card 4 -->
@@ -1637,10 +1629,10 @@
               </div>
               <div class="video-bottom-controls">
                 <button class="video-action-btn toggle-mute-btn" title="Toggle Sound">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5L6 9H2v6h4l5 4V5z"></path><line x1="23" y1="9" x2="17" y2="15"></line><line x1="17" y1="9" x2="23" y2="15"></line></svg>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5L6 9H2v6h4l5 4V5z"></path><line x1="23" y1="9" x2="17" y2="15"></line><line x1="17" y1="9" x2="23" y2="15"></line></svg>
                 </button>
                 <button class="video-action-btn fullscreen-video-btn" title="Fullscreen">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"></path></svg>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"></path></svg>
                 </button>
               </div>
             </div>
@@ -1664,10 +1656,10 @@
               </div>
               <div class="video-bottom-controls">
                 <button class="video-action-btn toggle-mute-btn" title="Toggle Sound">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5L6 9H2v6h4l5 4V5z"></path><line x1="23" y1="9" x2="17" y2="15"></line><line x1="17" y1="9" x2="23" y2="15"></line></svg>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5L6 9H2v6h4l5 4V5z"></path><line x1="23" y1="9" x2="17" y2="15"></line><line x1="17" y1="9" x2="23" y2="15"></line></svg>
                 </button>
                 <button class="video-action-btn fullscreen-video-btn" title="Fullscreen">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"></path></svg>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"></path></svg>
                 </button>
               </div>
             </div>
@@ -1691,10 +1683,10 @@
               </div>
               <div class="video-bottom-controls">
                 <button class="video-action-btn toggle-mute-btn" title="Toggle Sound">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5L6 9H2v6h4l5 4V5z"></path><line x1="23" y1="9" x2="17" y2="15"></line><line x1="17" y1="9" x2="23" y2="15"></line></svg>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5L6 9H2v6h4l5 4V5z"></path><line x1="23" y1="9" x2="17" y2="15"></line><line x1="17" y1="9" x2="23" y2="15"></line></svg>
                 </button>
                 <button class="video-action-btn fullscreen-video-btn" title="Fullscreen">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"></path></svg>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"></path></svg>
                 </button>
               </div>
             </div>
@@ -1712,217 +1704,140 @@
     <!-- TAB FRAME 3: [ Services Tab — Deep Dive ] -->
     <div class="tab-frame" id="frame-services">
       
-      <div class="services-header">
-        <h2>What We Do. Done Exceptionally.</h2>
-        <p>A comprehensive overview of our technical performance pipelines designed to scale your brand's authority, design consistency, and conversions.</p>
+      <div class="services-intro">
+        <span class="top-label">Our Core Capabilities</span>
+        <h2>High-Performance Growth Pipelines</h2>
+        <p>A comprehensive overview of our technical performance processes designed to scale your brand's digital footprints, design consistency, and core metrics.</p>
       </div>
 
-      <!-- Immersive Cards Grid -->
-      <div class="services-grid-container">
-
-        <!-- Card 1: Social Media Handling (Blue Soft Colorway) -->
-        <div class="service-premium-card">
-          <div class="service-card-header">
-            <div class="service-icon-box" style="color: #0066CC;">
-              <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
-              </svg>
+      <div class="services-deck">
+        
+        <!-- Service Block 1: SMM -->
+        <div class="service-premium-row">
+          <div class="service-meta-left">
+            <div class="service-header-group">
+              <div class="service-icon-wrapper">
+                <!-- SMM Phone SVG -->
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
+              </div>
+              <span class="service-tag">GSF-01 · organic growth</span>
+              <h3>Social Media Handling</h3>
             </div>
-            <span class="service-badge">Profile Scale</span>
+            <p class="service-desc">Complete management architecture focused on regular visual publishing, structured copywriting calendars, and organic community pipeline conversion.</p>
+            <a href="#global-footer" onclick="scrollToFooter(); return false;" class="service-action-link">Inquire about SMM &rarr;</a>
           </div>
-          <div class="service-card-body">
-            <h3>Social Media Management</h3>
-            <p class="service-card-desc">Comprehensive content creation and scheduled distribution setups ensuring organic outreach conversion increases across core channels.</p>
-            <ul class="service-features-list">
-              <li>
-                <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" /></svg>
-                Profile Optimization & Visual Auditing
-              </li>
-              <li>
-                <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" /></svg>
-                Strategic Monthly Operational Content Calendars
-              </li>
-              <li>
-                <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" /></svg>
-                Captions, Custom Tags, & Native Platform Scheduling
-              </li>
-              <li>
-                <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" /></svg>
-                Regular Analytics & Core Growth Tracking Loops
-              </li>
+          <div class="service-deliverables-right">
+            <h4>Core Deliverables Included</h4>
+            <ul class="classic-delivery-list">
+              <li>Comprehensive account layouts & optimized search indexes.</li>
+              <li>Data-driven monthly calendars mapped directly to audience patterns.</li>
+              <li>Native publishing cycles, trend monitoring, & account health tracking.</li>
+              <li>High-conversion customized copy and caption sets.</li>
             </ul>
           </div>
         </div>
 
-        <!-- Card 2: Video Creation (Purple Soft Colorway) -->
-        <div class="service-premium-card">
-          <div class="service-card-header">
-            <div class="service-icon-box" style="color: #8A2BE2;">
-              <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
-              </svg>
+        <!-- Service Block 2: Video -->
+        <div class="service-premium-row">
+          <div class="service-meta-left">
+            <div class="service-header-group">
+              <div class="service-icon-wrapper">
+                <!-- Video Slate SVG -->
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 7l-7 5 7 5V7z"></path><rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect></svg>
+              </div>
+              <span class="service-tag">GSF-02 · cinematic editing</span>
+              <h3>Video Creation</h3>
             </div>
-            <span class="service-badge">High-Retention</span>
+            <p class="service-desc">Algorithmic-tuned cinematic editing designed to boost user retention, structure clear brand storytelling, and build highly engaging marketing assets.</p>
+            <a href="#global-footer" onclick="scrollToFooter(); return false;" class="service-action-link">Inquire about Video Editing &rarr;</a>
           </div>
-          <div class="service-card-body">
-            <h3>High-Retention Video Editing</h3>
-            <p class="service-card-desc">Crafting high-retention cinematic sequences, short-form reels, and commercial promotional assets that capture and maintain consumer attention span.</p>
-            <ul class="service-features-list">
-              <li>
-                <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" /></svg>
-                Short-form TikTok / Reels Hook Formulations
-              </li>
-              <li>
-                <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" /></svg>
-                Premium Text Captions & Custom Graphic Overlays
-              </li>
-              <li>
-                <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" /></svg>
-                Professional Color Grading & Master Sound Design
-              </li>
-              <li>
-                <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" /></svg>
-                Corporate Promos & High-Concept Cinematic Promos
-              </li>
+          <div class="service-deliverables-right">
+            <h4>Core Deliverables Included</h4>
+            <ul class="classic-delivery-list">
+              <li>Cinematic short-form reels with custom pacing curves.</li>
+              <li>Clean transitions, animated graphics, and visual color passes.</li>
+              <li>High-converting promotional assets, corporate hooks, & wedding reels.</li>
+              <li>Premium typographic overlays & high-impact background tracking.</li>
             </ul>
           </div>
         </div>
 
-        <!-- Card 3: Graphic Designing (Teal Soft Colorway) -->
-        <div class="service-premium-card">
-          <div class="service-card-header">
-            <div class="service-icon-box" style="color: #00A389;">
-              <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-              </svg>
+        <!-- Service Block 3: Design -->
+        <div class="service-premium-row">
+          <div class="service-meta-left">
+            <div class="service-header-group">
+              <div class="service-icon-wrapper">
+                <!-- Graphic Vector SVG -->
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"></path><path d="M2 17l10 5 10-5"></path><path d="M2 12l10 5 10-5"></path></svg>
+              </div>
+              <span class="service-tag">GSF-03 · creative system</span>
+              <h3>Graphic Designing</h3>
             </div>
-            <span class="service-badge">Identity Focus</span>
+            <p class="service-desc">Establishing unmatched visual consistency and design trust through high-CTR ad designs, branding guidelines, and balanced digital layouts.</p>
+            <a href="#global-footer" onclick="scrollToFooter(); return false;" class="service-action-link">Inquire about Design &rarr;</a>
           </div>
-          <div class="service-card-body">
-            <h3>Graphic Designing & Identity</h3>
-            <p class="service-card-desc">Sleek user interface visuals, high-click-through-rate ad graphics, and premium digital assets built on strict design rules.</p>
-            <ul class="service-features-list">
-              <li>
-                <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" /></svg>
-                Ad Creatives Optimized for Feed Placement
-              </li>
-              <li>
-                <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" /></svg>
-                Custom Banner Designs & Brand Guides
-              </li>
-              <li>
-                <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" /></svg>
-                Carousel Social Templates & Informational Infographics
-              </li>
-              <li>
-                <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" /></svg>
-                Vector Brand Marks & Editorial Assets
-              </li>
+          <div class="service-deliverables-right">
+            <h4>Core Deliverables Included</h4>
+            <ul class="classic-delivery-list">
+              <li>Ad assets structured specifically to maximize feed tap rates.</li>
+              <li>Cohesive visual standards, color palettes, & digital layouts.</li>
+              <li>Engaging social grid designs, custom templates, & aesthetic headers.</li>
+              <li>Professional vector art, modern typography systems, & mockups.</li>
             </ul>
           </div>
         </div>
 
-        <!-- Card 4: Web Dev (Amber Soft Colorway) -->
-        <div class="service-premium-card">
-          <div class="service-card-header">
-            <div class="service-icon-box" style="color: #D28700;">
-              <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
-              </svg>
+        <!-- Service Block 4: Web -->
+        <div class="service-premium-row">
+          <div class="service-meta-left">
+            <div class="service-header-group">
+              <div class="service-icon-wrapper">
+                <!-- Web Code SVG -->
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+              </div>
+              <span class="service-tag">GSF-04 · responsive engineering</span>
+              <h3>Website Development</h3>
             </div>
-            <span class="service-badge">Rapid Tech Stack</span>
+            <p class="service-desc">Engineering responsive, high-speed interfaces meticulously structured to conversion logic, modern security setups, and elegant styling.</p>
+            <a href="#global-footer" onclick="scrollToFooter(); return false;" class="service-action-link">Inquire about Web Dev &rarr;</a>
           </div>
-          <div class="service-card-body">
-            <h3>Web Platform Engineering</h3>
-            <p class="service-card-desc">Designing and launching responsive, lightning-fast pages tuned for search engines, client discovery, and immediate conversion.</p>
-            <ul class="service-features-list">
-              <li>
-                <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" /></svg>
-                Figma-to-Code Custom Interactive Interfaces
-              </li>
-              <li>
-                <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" /></svg>
-                Mobile-First Layout Structures (iOS, Android, Tablet)
-              </li>
-              <li>
-                <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" /></svg>
-                Lead Captures, Pixel Integration & Conversions Tracking
-              </li>
-              <li>
-                <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" /></svg>
-                Speed & SEO Optimization For Lower Bounce Rates
-              </li>
+          <div class="service-deliverables-right">
+            <h4>Core Deliverables Included</h4>
+            <ul class="classic-delivery-list">
+              <li>Clean responsive landing pages designed for any screen.</li>
+              <li>Optimized assets ensuring lightning fast page rendering speeds.</li>
+              <li>Robust database lead capture structures & form validation scripts.</li>
+              <li>Deep integrated marketing data metrics and analytics setup.</li>
             </ul>
           </div>
         </div>
 
-        <!-- Card 5: Meta Ads (Span Full Width - Indigo Soft Colorway) -->
-        <div class="service-premium-card span-full">
-          <div class="service-card-header">
-            <div class="service-icon-box" style="color: #3B42FF;">
-              <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
-              </svg>
+        <!-- Service Block 5: Meta Ads -->
+        <div class="service-premium-row">
+          <div class="service-meta-left">
+            <div class="service-header-group">
+              <div class="service-icon-wrapper">
+                <!-- Meta Ads Scale SVG -->
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
+              </div>
+              <span class="service-tag">GSF-05 · paid scale</span>
+              <h3>Meta Ads Management</h3>
             </div>
-            <span class="service-badge">Paid Acquisition</span>
+            <p class="service-desc">Targeted paid acquisition frameworks that optimize media budget spend, locate high-value users, and scale immediate conversion returns.</p>
+            <a href="#global-footer" onclick="scrollToFooter(); return false;" class="service-action-link">Inquire about Paid Ads &rarr;</a>
           </div>
-          <div class="service-card-body">
-            <h3>Meta Ads & Lead Acquisition Funnels</h3>
-            <p class="service-card-desc">Highly targeted campaigns that directly generate return on investment. We handle custom audience definitions, pixel configuration, target matrixing, and weekly ad optimization audits.</p>
-            <ul class="service-features-list">
-              <li>
-                <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" /></svg>
-                Custom Audience Frameworks & Laser-Targeted Parameters
-              </li>
-              <li>
-                <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" /></svg>
-                Rapid-Iterative Ad Budget Allocation (Preventing Spend Loss)
-              </li>
-              <li>
-                <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" /></svg>
-                Comprehensive Weekly Conversion Dashboard Syncs
-              </li>
-              <li>
-                <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" /></svg>
-                Strategic Funnel Integrations for Explicit Scaling
-              </li>
+          <div class="service-deliverables-right">
+            <h4>Core Deliverables Included</h4>
+            <ul class="classic-delivery-list">
+              <li>Custom audience parameterization & direct funnel tracking.</li>
+              <li>Granular ad budget matrix tests avoiding wasted spend margins.</li>
+              <li>Fast lead pipelines directly mapped to customer acquisition goals.</li>
+              <li>Weekly, transparent conversion analysis dashboards.</li>
             </ul>
           </div>
         </div>
 
       </div>
-
-      <!-- Professional Operational Loop section -->
-      <section class="workflow-section">
-        <h3 class="workflow-title">Our Operational Flow Loop</h3>
-        <div class="workflow-grid">
-          
-          <div class="workflow-step">
-            <div class="step-number" style="background: #E0ECFF; color: #0066CC;">1</div>
-            <div class="step-title">Audit & Sync</div>
-            <p class="step-desc">We deep dive into your digital footprints, identity benchmarks, and conversion structures.</p>
-          </div>
-
-          <div class="workflow-step">
-            <div class="step-number" style="background: #EADBFC; color: #8A2BE2;">2</div>
-            <div class="step-title">Build Out Pipeline</div>
-            <p class="step-desc">Our design, code, and editing heads produce high-end creatives and custom user paths.</p>
-          </div>
-
-          <div class="workflow-step">
-            <div class="step-number" style="background: #D1F5EE; color: #00A389;">3</div>
-            <div class="step-title">Deploy & Target</div>
-            <p class="step-desc">Deployment of the campaigns, responsive web infrastructure, and calendar releases.</p>
-          </div>
-
-          <div class="workflow-step">
-            <div class="step-number" style="background: #FFEAD7; color: #D28700;">4</div>
-            <div class="step-title">Track & Elevate</div>
-            <p class="step-desc">Granular adjustments to optimize the ROAS, traffic quality, and click conversion metrics.</p>
-          </div>
-
-        </div>
-      </section>
 
       <!-- Team Structural Grid Container inside Services Tab -->
       <section class="team-section">
@@ -1935,7 +1850,7 @@
               <img class="team-avatar" src="aniket.jpeg" onerror="this.src='https://placehold.co/300x300/f5f5f7/0a0a0a?text=Aniket'" alt="Aniket Team Portrait">
             </div>
             <h4 class="team-name">Aniket</h4>
-            <p class="team-role">Co-Founder & Editor</p>
+            <p class="team-role">Founder & Editor</p>
           </div>
 
           <div class="team-card">
@@ -1975,6 +1890,7 @@
         <div class="footer-brand">
           <div class="footer-logo-group">
             <img src="logo.jpeg" onerror="this.src='https://placehold.co/100x100/0a0a0a/ffffff?text=GSF'" alt="GOSOCIALFLOW logo asset in footer" style="height: 28px; width: 28px; object-fit: contain;">
+            <!-- Brand name rendered with high contrast white layout override -->
             <span class="brand-name">GOSOCIALFLOW</span>
           </div>
           <div class="footer-tagline">WE CREATE. WE MANAGE. WE GROW.</div>
@@ -1989,29 +1905,69 @@
         </div>
       </div>
 
-      <!-- Contact Matrix Frame -->
+      <!-- Contact Us Section -->
+      <div style="margin-bottom: 20px;">
+        <h3 style="color: #FFFFFF; font-size: 18px; letter-spacing: 0.05em; text-transform: uppercase;">Contact Us</h3>
+      </div>
       <div class="contact-matrix">
         <div class="matrix-item">
-          <div class="matrix-label">Agency Operations</div>
+          <div class="matrix-label">Email</div>
           <a href="mailto:gosocialf@gmail.com" class="matrix-value">gosocialf@gmail.com</a>
         </div>
         <div class="matrix-item">
-          <div class="matrix-label">Executive Office</div>
-          <a href="mailto:rajajankarll@gmail.com" class="matrix-value">rajajankarll@gmail.com</a>
+          <div class="matrix-label">Instagram</div>
+          <a href="https://www.instagram.com/gosocialflow/" target="_blank" class="matrix-value" style="color: #E1306C;">@gosocialflow</a>
         </div>
         <div class="matrix-item">
           <div class="matrix-label">Call Direct</div>
-          <a href="tel:+917559393785" class="matrix-value" style="font-weight: 700; color: #fff;">+91 7559393785</a>
+          <a href="tel:+917559393785" class="matrix-value" style="color: #fff;">+91 7559393785</a>
         </div>
         <div class="matrix-item">
           <div class="matrix-label">WhatsApp</div>
-          <a href="https://wa.me/917559393785" target="_blank" class="matrix-value" style="font-weight: 700; color: #00E676;">Chat on WhatsApp</a>
+          <a href="https://wa.me/917559393785" target="_blank" class="matrix-value" style="color: #00E676;">Chat on WhatsApp</a>
         </div>
       </div>
     </div>
   </footer>
 
   <script>
+    // Theme toggle mechanism
+    function toggleTheme() {
+      const body = document.body;
+      body.classList.toggle('dark');
+      const isDark = body.classList.contains('dark');
+      localStorage.setItem('gsf-theme', isDark ? 'dark' : 'light');
+      updateThemeIcons(isDark);
+    }
+
+    function updateThemeIcons(isDark) {
+      const sunIcon = document.querySelector('.sun-icon');
+      const moonIcon = document.querySelector('.moon-icon');
+      if (sunIcon && moonIcon) {
+        if (isDark) {
+          sunIcon.style.display = 'block';
+          moonIcon.style.display = 'none';
+        } else {
+          sunIcon.style.display = 'none';
+          moonIcon.style.display = 'block';
+        }
+      }
+    }
+
+    // Auto load theme setup on page load
+    (function() {
+      const savedTheme = localStorage.getItem('gsf-theme');
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const isDark = savedTheme === 'dark' || (!savedTheme && prefersDark);
+      if (isDark) {
+        document.body.classList.add('dark');
+      }
+      window.addEventListener('DOMContentLoaded', () => {
+        updateThemeIcons(document.body.classList.contains('dark'));
+      });
+    })();
+
+    // Tab controller switcher
     function switchTab(tabId) {
       document.querySelectorAll('.tab-frame').forEach(frame => {
         frame.classList.remove('active');
@@ -2043,6 +1999,7 @@
       });
     });
 
+    // Video Custom Control Logic
     document.querySelectorAll('.reel-card').forEach(card => {
       const video = card.querySelector('.reel-video');
       const toast = card.querySelector('.video-status-toast');
@@ -2051,11 +2008,13 @@
       const muteBtn = card.querySelector('.toggle-mute-btn');
       const fullscreenBtn = card.querySelector('.fullscreen-video-btn');
 
+      // 1. Click on video container to toggle Mute/Unmute
       video.addEventListener('click', (e) => {
         e.stopPropagation();
         toggleMute();
       });
 
+      // 2. Click on mute overlay button to toggle Mute/Unmute
       if(muteBtn) {
         muteBtn.addEventListener('click', (e) => {
           e.stopPropagation();
@@ -2063,6 +2022,7 @@
         });
       }
 
+      // 3. Click on Fullscreen button
       if(fullscreenBtn) {
         fullscreenBtn.addEventListener('click', (e) => {
           e.stopPropagation();
@@ -2073,6 +2033,7 @@
       function toggleMute() {
         video.muted = !video.muted;
         
+        // Show status toast temporarily
         if (video.muted) {
           toastMute.style.display = 'none';
           toastUnmute.style.display = 'block';
@@ -2097,7 +2058,7 @@
         if (video.requestFullscreen) {
           video.requestFullscreen();
         } else if (video.webkitEnterFullscreen) {
-          video.webkitEnterFullscreen();
+          video.webkitEnterFullscreen(); // Support iOS devices
         } else if (video.webkitRequestFullscreen) {
           video.webkitRequestFullscreen();
         } else if (video.msRequestFullscreen) {
@@ -2113,6 +2074,7 @@
       const tOverlay = document.getElementById('testimonial-video-overlay');
       const tAudioBtn = document.getElementById('testimonial-audio-btn');
 
+      // Play / Pause event
       testVideoContainer.addEventListener('click', (e) => {
         e.stopPropagation();
         if (tVideo.paused) {
@@ -2124,6 +2086,7 @@
         }
       });
 
+      // Mute / Unmute Control
       if(tAudioBtn) {
         tAudioBtn.addEventListener('click', (e) => {
           e.stopPropagation();
