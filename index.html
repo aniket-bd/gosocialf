@@ -2,11 +2,11 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <title>GOSOCIALFLOW — Your Entire Digital Growth Engine.</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
   
   <script>
     // Handles graceful video fallbacks early to avoid ReferenceError on load failure
@@ -26,19 +26,34 @@
   </script>
 
   <style>
-    /* Global Styles & Reset */
     :root {
-      --canvas-white: #FAFAFA;
+      --canvas-white: #FAFBFD;
       --rich-obsidian: #0A0A0A;
       --text-main: #1D1D1F;
       --text-muted: #4A4A4A;
       --text-light: #666666;
-      --border-color: #E5E5E7;
-      --sf-gray: #F5F5F7;
-      --friction-bg: #FFF5F5;
-      --flow-bg: #F5F9FF;
-      --slate-accent: #4A5568;
+      --border-color: #E2E4E9;
+      --sf-gray: #F4F6F9;
+      --friction-bg: #FFF6F6;
+      --flow-bg: #F2F7FF;
+      --slate-accent: #2C3E50;
+      --primary-blue: #0066CC;
+      --bright-teal: #00D2C4;
+      --success-green: #34C759;
       
+      /* New light soft coloring design system */
+      --pastel-blue-bg: linear-gradient(180deg, #FFFFFF 0%, #F3F7FD 100%);
+      --pastel-purple-bg: linear-gradient(180deg, #FFFFFF 0%, #F8F3FD 100%);
+      --pastel-teal-bg: linear-gradient(180deg, #FFFFFF 0%, #F1FBF9 100%);
+      --pastel-amber-bg: linear-gradient(180deg, #FFFFFF 0%, #FCF8F2 100%);
+      --pastel-indigo-bg: linear-gradient(180deg, #FFFFFF 0%, #F4F5FF 100%);
+      
+      --pastel-blue-border: #D1E3FA;
+      --pastel-purple-border: #EADBFC;
+      --pastel-teal-border: #D1F5EE;
+      --pastel-amber-border: #F7EAD7;
+      --pastel-indigo-border: #E0E3FF;
+
       --font-main: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
       --font-tag: 'Plus Jakarta Sans', sans-serif;
     }
@@ -55,6 +70,7 @@
       color: var(--text-main);
       font-family: var(--font-main);
       -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
     }
 
     body {
@@ -62,22 +78,27 @@
       display: flex;
       flex-direction: column;
       overflow-x: hidden;
+      /* Subtle premium background glow */
+      background-image: 
+        radial-gradient(circle at 10% 15%, rgba(224, 235, 255, 0.45) 0%, transparent 40%),
+        radial-gradient(circle at 85% 60%, rgba(246, 235, 255, 0.45) 0%, transparent 35%);
+      background-attachment: fixed;
     }
 
-    /* Sticky Navigation */
     header {
       position: sticky;
       top: 0;
       z-index: 1000;
-      background: rgba(250, 250, 250, 0.85);
+      background: rgba(250, 251, 253, 0.88);
       backdrop-filter: blur(20px);
       -webkit-backdrop-filter: blur(20px);
       border-bottom: 1px solid var(--border-color);
-      height: 68px;
+      height: 72px;
       display: flex;
       align-items: center;
       justify-content: space-between;
       padding: 0 40px;
+      transition: all 0.3s ease;
     }
 
     .nav-left {
@@ -89,49 +110,88 @@
     }
 
     .logo-container {
-      width: 32px;
-      height: 32px;
-      border-radius: 6px;
+      width: 44px; /* Modified to perfect square to fit branding gracefully */
+      height: 44px; /* Modified to perfect square to fit branding gracefully */
+      border-radius: 10px; /* Proportionally adjusted corner smoothing */
       overflow: hidden;
       display: flex;
       align-items: center;
       justify-content: center;
+      border: 1px solid var(--border-color);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      background: #FFFFFF;
     }
 
     .logo-img {
       width: 100%;
       height: 100%;
-      object-fit: cover;
+      object-fit: contain; /* Ensures the branding artwork fits inside the square bounds properly without cropping */
+      padding: 4px; /* Elegant internal breathing room */
+      background: #FFFFFF;
     }
 
     .brand-name {
-      font-family: var(--font-main);
-      font-weight: 700;
-      font-size: 15px;
-      letter-spacing: -0.02em;
+      font-family: var(--font-tag);
+      font-weight: 800;
+      font-size: 16px;
+      letter-spacing: -0.03em;
       text-transform: uppercase;
+      background: linear-gradient(135deg, var(--rich-obsidian) 30%, #4a5568);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-brand-top {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    .hero-logo-emblem {
+      width: 115px; /* Increased size by an additional 30% from 88px */
+      height: 115px; /* Increased size by an additional 30% from 88px */
+      border-radius: 26px; /* Scaled proportional rounded cornering */
+      overflow: hidden;
+      border: 1px solid var(--border-color);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+      background: #FFFFFF;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hero-logo-emblem img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain; /* Prevents emblem cropping on high pixel density screens */
+      padding: 8px; /* Adjusted padding for the larger emblem size */
+      background: #FFFFFF;
     }
 
     /* Pill Tab Switcher */
     .tab-switcher {
       display: flex;
-      background: #F0F0F2;
+      background: #E4E7ED;
       padding: 4px;
       border-radius: 100px;
       gap: 2px;
+      box-shadow: inset 0 1px 3px rgba(0,0,0,0.05);
     }
 
     .tab-btn {
       font-family: var(--font-main);
-      font-size: 13.5px;
+      font-size: 14px;
       font-weight: 600;
       color: var(--text-light);
       background: transparent;
       border: none;
-      padding: 6px 18px;
+      padding: 8px 22px;
       border-radius: 100px;
       cursor: pointer;
       transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+      -webkit-tap-highlight-color: transparent;
     }
 
     .tab-btn:hover {
@@ -141,32 +201,33 @@
     .tab-btn.active {
       background: #FFFFFF;
       color: var(--text-main);
-      box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.06);
+      box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.08);
     }
 
-    /* Primary Black Pill CTA */
     .btn-pill {
       font-family: var(--font-main);
-      font-size: 13px;
+      font-size: 13.5px;
       font-weight: 600;
       background: var(--rich-obsidian);
       color: #FFFFFF;
       border: none;
-      padding: 10px 22px;
+      padding: 11px 24px;
       border-radius: 100px;
       cursor: pointer;
-      transition: background-color 0.2s, transform 0.1s;
+      transition: background-color 0.2s, transform 0.1s, box-shadow 0.2s;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      -webkit-tap-highlight-color: transparent;
     }
 
     .btn-pill:hover {
       background-color: #222222;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.1);
     }
     
     .btn-pill:active {
-      transform: scale(0.97);
+      transform: scale(0.96);
     }
 
-    /* Main Component Switcher Container */
     main {
       flex: 1;
       position: relative;
@@ -177,9 +238,9 @@
       opacity: 0;
       transform: translateY(15px);
       transition: opacity 0.35s cubic-bezier(0.4, 0, 0.2, 1), transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-      max-width: 1100px;
+      max-width: 1200px;
       margin: 0 auto;
-      padding: 80px 40px;
+      padding: 60px 24px;
     }
 
     .tab-frame.active {
@@ -188,38 +249,41 @@
       transform: translateY(0);
     }
 
-    /* FRAME 1: Home Viewport Styling */
     .hero-section {
       text-align: center;
-      margin-bottom: 120px;
-      padding-top: 20px;
+      margin-bottom: 90px;
+      padding-top: 40px;
+      position: relative;
     }
 
     .top-label {
       font-family: var(--font-tag);
-      font-size: 11px;
-      font-weight: 700;
-      color: #86868B;
+      font-size: clamp(10px, 2.5vw, 12px);
+      font-weight: 800;
+      color: var(--primary-blue);
       text-transform: uppercase;
-      letter-spacing: 0.15em;
-      margin-bottom: 24px;
+      letter-spacing: 0.2em;
+      margin-bottom: 20px;
+      background: linear-gradient(90deg, var(--primary-blue), #8a2be2);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
 
     .h1-title {
-      font-size: 54px;
-      font-weight: 700;
-      letter-spacing: -0.025em;
-      line-height: 1.12;
-      max-width: 820px;
-      margin: 0 auto 28px auto;
+      font-size: clamp(32px, 5.5vw, 58px);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.15;
+      max-width: 920px;
+      margin: 0 auto 24px auto;
       color: var(--text-main);
     }
 
     .paragraph-deck {
-      font-size: 19px;
+      font-size: clamp(16px, 3vw, 20px);
       color: var(--text-muted);
-      max-width: 620px;
-      margin: 0 auto 44px auto;
+      max-width: 680px;
+      margin: 0 auto 40px auto;
       line-height: 1.6;
     }
 
@@ -227,18 +291,20 @@
       display: flex;
       justify-content: center;
       gap: 16px;
+      flex-wrap: wrap;
     }
 
     .btn-solid {
       background: var(--rich-obsidian);
       color: #FFFFFF;
       border: none;
-      padding: 15px 30px;
+      padding: 16px 36px;
       border-radius: 100px;
-      font-size: 14px;
+      font-size: 15px;
       font-weight: 600;
       cursor: pointer;
       transition: background-color 0.2s, transform 0.1s;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.1);
     }
 
     .btn-solid:hover {
@@ -250,66 +316,76 @@
     }
 
     .btn-outline {
-      background: transparent;
+      background: #FFFFFF;
       color: var(--text-main);
       border: 1.5px solid var(--border-color);
-      padding: 14px 28px;
+      padding: 15px 34px;
       border-radius: 100px;
-      font-size: 14px;
+      font-size: 15px;
       font-weight: 600;
       cursor: pointer;
-      transition: background-color 0.2s, border-color 0.2s;
+      transition: all 0.2s ease;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
     }
 
     .btn-outline:hover {
-      background-color: rgba(0, 0, 0, 0.03);
-      border-color: var(--text-main);
+      background-color: var(--sf-gray);
+      border-color: var(--text-light);
     }
 
-    /* Conflict / Resolution Grid */
     .comparison-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 32px;
-      margin-bottom: 120px;
+      margin-bottom: 100px;
     }
 
     .comp-card {
-      padding: 56px;
-      border-radius: 28px;
-      transition: transform 0.3s ease;
+      padding: 48px;
+      border-radius: 24px;
+      transition: transform 0.3s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      border: 1px solid transparent;
     }
 
     .comp-card:hover {
-      transform: translateY(-4px);
+      transform: translateY(-5px);
     }
 
     .comp-card.friction {
       background: var(--friction-bg);
+      border-color: #FFE5E5;
+      box-shadow: 0 8px 24px rgba(255, 59, 48, 0.03);
     }
 
     .comp-card.flow {
-      background: var(--flow-bg);
+      background: linear-gradient(135deg, #F0F6FF 0%, #EAFBF9 100%);
+      border-color: #D3E4FD;
+      box-shadow: 0 8px 24px rgba(0, 102, 204, 0.04);
     }
 
     .comp-card h3 {
-      font-size: 26px;
-      font-weight: 600;
-      margin-bottom: 18px;
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 16px;
       letter-spacing: -0.015em;
       color: var(--text-main);
+      display: flex;
+      align-items: center;
+      gap: 10px;
     }
 
     .comp-card p {
-      font-size: 15px;
+      font-size: 15.5px;
       color: var(--text-muted);
       line-height: 1.65;
     }
 
-    /* Metrics & Testimonial Layout Frame */
     .metrics-header {
-      font-size: 28px;
-      font-weight: 700;
+      font-size: clamp(24px, 4vw, 34px);
+      font-weight: 800;
       letter-spacing: -0.02em;
       margin-bottom: 48px;
       text-align: center;
@@ -318,53 +394,66 @@
     .metrics-container {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 40px;
-      margin-bottom: 120px;
+      gap: 32px;
+      margin-bottom: 100px;
     }
 
     .metric-card {
-      background: var(--canvas-white);
-      border: 1px solid var(--border-color);
+      background: linear-gradient(180deg, #FFFFFF 0%, #F5F7FB 100%);
+      border: 1px solid var(--pastel-blue-border);
       border-radius: 20px;
-      padding: 40px;
-      transition: box-shadow 0.3s ease;
+      padding: 44px 32px;
+      text-align: center;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 12px rgba(0, 102, 204, 0.02);
     }
 
     .metric-card:hover {
-      box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+      transform: translateY(-4px);
+      box-shadow: 0 12px 30px rgba(0, 102, 204, 0.06);
+      border-color: var(--primary-blue);
     }
 
     .metric-number {
-      font-size: 52px;
-      font-weight: 700;
-      letter-spacing: -0.03em;
-      margin-bottom: 12px;
-      color: var(--rich-obsidian);
+      font-size: clamp(40px, 6vw, 56px);
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      margin-bottom: 10px;
+      background: linear-gradient(135deg, var(--rich-obsidian) 20%, var(--primary-blue));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
 
     .metric-label {
-      font-size: 14px;
+      font-size: 14.5px;
       color: var(--text-muted);
       line-height: 1.5;
+      font-weight: 500;
     }
 
-    /* Reels Showcase Section styling */
     .reels-section {
-      margin-bottom: 120px;
+      margin-bottom: 100px;
     }
 
     .reels-header {
-      font-size: 28px;
-      font-weight: 700;
+      font-size: clamp(24px, 4vw, 34px);
+      font-weight: 800;
       letter-spacing: -0.02em;
-      margin-bottom: 48px;
+      margin-bottom: 12px;
       text-align: center;
+    }
+
+    .reels-subheader {
+      font-size: 16px;
+      color: var(--text-light);
+      text-align: center;
+      margin-bottom: 48px;
     }
 
     .reels-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
+      gap: 28px;
     }
 
     .reel-card {
@@ -373,7 +462,7 @@
       background: #000000;
       border-radius: 24px;
       overflow: hidden;
-      box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+      box-shadow: 0 16px 40px rgba(0,0,0,0.08);
       border: 1px solid var(--border-color);
       cursor: pointer;
     }
@@ -386,7 +475,6 @@
       background: #000;
     }
 
-    /* Fallback display if video not loaded */
     .reel-card .video-placeholder {
       position: absolute;
       inset: 0;
@@ -394,12 +482,12 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      background: var(--sf-gray);
-      color: var(--text-light);
+      background: #111;
+      color: #fff;
       font-size: 13px;
       font-weight: 600;
       text-align: center;
-      padding: 20px;
+      padding: 24px;
       z-index: 2;
     }
 
@@ -408,26 +496,32 @@
     }
 
     .video-placeholder-icon {
-      font-size: 32px;
-      margin-bottom: 12px;
+      font-size: 40px;
+      margin-bottom: 16px;
     }
 
-    /* Premium Custom Video Interaction Overlays */
+    /* Premium ENLARGED Video Interaction Overlays */
     .video-interactive-overlay {
       position: absolute;
       inset: 0;
-      background: linear-gradient(to top, rgba(0,0,0,0.4) 0%, transparent 40%, transparent 60%, rgba(0,0,0,0.2) 100%);
+      background: linear-gradient(to top, rgba(0,0,0,0.5) 0%, transparent 35%, transparent 65%, rgba(0,0,0,0.3) 100%);
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      padding: 20px;
+      padding: 24px;
       opacity: 0;
-      transition: opacity 0.25s ease;
+      transition: opacity 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
       z-index: 5;
     }
 
     .reel-card:hover .video-interactive-overlay {
       opacity: 1;
+    }
+
+    @media (hover: none) {
+      .video-interactive-overlay {
+        opacity: 0.95;
+      }
     }
 
     .video-top-controls {
@@ -439,56 +533,68 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      gap: 16px;
     }
 
     .video-badge-tag {
-      background: rgba(255, 255, 255, 0.2);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-      color: #fff;
+      background: rgba(255, 255, 255, 0.25);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      color: #ffffff;
       font-size: 11px;
-      font-weight: 600;
-      padding: 4px 10px;
+      font-weight: 700;
+      padding: 6px 12px;
       border-radius: 100px;
-      letter-spacing: 0.05em;
+      letter-spacing: 0.08em;
       text-transform: uppercase;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     }
 
     .video-action-btn {
-      background: rgba(255, 255, 255, 0.25);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-      border: 1px solid rgba(255, 255, 255, 0.2);
+      background: rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.25);
       border-radius: 50%;
-      width: 36px;
-      height: 36px;
+      width: 48px;
+      height: 48px;
       display: flex;
       align-items: center;
       justify-content: center;
       cursor: pointer;
       color: #ffffff;
-      transition: background 0.2s, transform 0.1s;
+      transition: background 0.25s, transform 0.15s, border-color 0.25s;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .video-action-btn svg {
+      width: 20px;
+      height: 20px;
+      stroke-width: 2.5;
     }
 
     .video-action-btn:hover {
-      background: rgba(255, 255, 255, 0.4);
+      background: rgba(255, 255, 255, 0.25);
+      border-color: rgba(255, 255, 255, 0.6);
+      transform: scale(1.08);
     }
 
     .video-action-btn:active {
       transform: scale(0.92);
     }
 
-    /* Volume/Status Toast Indicator */
     .video-status-toast {
       position: absolute;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%) scale(0.8);
-      background: rgba(0, 0, 0, 0.7);
-      backdrop-filter: blur(10px);
+      background: rgba(0, 0, 0, 0.8);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
       border-radius: 50%;
-      width: 60px;
-      height: 60px;
+      width: 72px;
+      height: 72px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -497,6 +603,12 @@
       pointer-events: none;
       transition: opacity 0.3s, transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
       z-index: 10;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    }
+
+    .video-status-toast svg {
+      width: 28px;
+      height: 28px;
     }
 
     .video-status-toast.show {
@@ -504,58 +616,113 @@
       transform: translate(-50%, -50%) scale(1);
     }
 
-    /* Client Testimonial Carousel Section */
     .testimonial-carousel {
-      background: var(--sf-gray);
+      background: linear-gradient(135deg, #F5F7FB 0%, #FAF6FC 100%);
       border-radius: 28px;
-      padding: 60px;
+      padding: 64px;
       display: grid;
-      grid-template-columns: 6fr 4fr;
+      grid-template-columns: 1fr 1fr;
       gap: 60px;
       align-items: center;
       margin-bottom: 40px;
+      border: 1px solid var(--pastel-blue-border);
+      box-shadow: 0 12px 36px rgba(0, 102, 204, 0.03);
     }
 
     .testimonial-review {
-      font-size: 22px;
+      font-size: clamp(18px, 3.5vw, 24px);
       font-weight: 500;
       line-height: 1.5;
-      letter-spacing: -0.01em;
+      letter-spacing: -0.015em;
       color: var(--text-main);
     }
 
     .testimonial-author {
       margin-top: 24px;
       font-size: 14px;
-      font-weight: 600;
-      color: var(--text-light);
+      font-weight: 700;
+      color: var(--primary-blue);
       text-transform: uppercase;
-      letter-spacing: 0.05em;
+      letter-spacing: 0.08em;
     }
 
-    .video-thumbnail-frame {
-      aspect-ratio: 16 / 9;
-      background: #000;
-      border-radius: 16px;
+    .video-testimonial-block {
+      background: #0A0A0A;
+      border-radius: 24px;
       overflow: hidden;
       position: relative;
+      aspect-ratio: 16 / 9;
+      width: 100%;
+      box-shadow: 0 20px 48px rgba(0,0,0,0.15);
       cursor: pointer;
-      box-shadow: 0 12px 40px rgba(0,0,0,0.15);
+      border: 1px solid rgba(255, 255, 255, 0.1);
     }
 
-    .video-thumbnail-frame::before {
-      content: "";
+    .testimonial-live-video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .video-testimonial-overlay {
       position: absolute;
       inset: 0;
-      background: rgba(0,0,0,0.3) url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" width="48" height="48"><path d="M8 5v14l11-7z"/></svg>') no-repeat center;
-      transition: background-color 0.2s;
+      background: rgba(0, 0, 0, 0.4);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      transition: background-color 0.3s ease, opacity 0.3s ease;
+      z-index: 4;
     }
 
-    .video-thumbnail-frame:hover::before {
-      background-color: rgba(0,0,0,0.4);
+    .video-testimonial-block:hover .video-testimonial-overlay {
+      background: rgba(0, 0, 0, 0.2);
     }
 
-    /* FRAME 2: Portfolio & Founder Biography Layout */
+    .play-giant-btn {
+      width: 80px;
+      height: 80px;
+      background: #FFFFFF;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+      color: var(--rich-obsidian);
+      transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    .play-giant-btn svg {
+      width: 32px;
+      height: 32px;
+      fill: currentColor;
+    }
+
+    .video-testimonial-block:hover .play-giant-btn {
+      transform: scale(1.1);
+      box-shadow: 0 14px 40px rgba(0,0,0,0.4);
+    }
+
+    .video-testimonial-block.playing .video-testimonial-overlay {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .video-testimonial-block.playing:hover .video-testimonial-overlay {
+      opacity: 1;
+      pointer-events: auto;
+      background: rgba(0, 0, 0, 0.3);
+    }
+
+    .testimonial-mute-btn {
+      position: absolute;
+      bottom: 24px;
+      right: 24px;
+      z-index: 6;
+    }
+
     .split-grid {
       display: grid;
       grid-template-columns: 4.5fr 7.5fr;
@@ -588,15 +755,15 @@
     }
 
     .bio-stack h2 {
-      font-size: 38px;
-      font-weight: 700;
+      font-size: clamp(28px, 4.5vw, 38px);
+      font-weight: 800;
       letter-spacing: -0.02em;
       margin-bottom: 20px;
       color: var(--text-main);
     }
 
     .bio-text {
-      font-size: 16px;
+      font-size: 16.5px;
       color: var(--text-muted);
       line-height: 1.65;
       margin-bottom: 28px;
@@ -605,27 +772,27 @@
     .accent-badge {
       display: inline-flex;
       align-items: center;
-      background: var(--sf-gray);
-      padding: 8px 16px;
+      background: linear-gradient(135deg, #FFF9F2 0%, #FFF2E0 100%);
+      padding: 8px 18px;
       border-radius: 100px;
-      font-size: 13px;
-      font-weight: 600;
-      color: var(--text-main);
-      border: 1px solid var(--border-color);
+      font-size: 13.5px;
+      font-weight: 700;
+      color: #B25E00;
+      border: 1px solid #FFE3C0;
     }
 
-    /* Soft skill progress lines */
     .skills-stack {
       margin-bottom: 100px;
       background: #FFFFFF;
       border: 1px solid var(--border-color);
       padding: 48px;
       border-radius: 28px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.02);
     }
 
     .skills-stack h3 {
-      font-size: 20px;
-      font-weight: 700;
+      font-size: 22px;
+      font-weight: 800;
       margin-bottom: 32px;
       letter-spacing: -0.01em;
     }
@@ -641,14 +808,14 @@
     .skill-meta {
       display: flex;
       justify-content: space-between;
-      font-size: 13.5px;
+      font-size: 14px;
       font-weight: 600;
       margin-bottom: 10px;
       color: var(--text-main);
     }
 
     .progress-bar {
-      height: 6px;
+      height: 8px;
       background: #EAEAEA;
       border-radius: 100px;
       overflow: hidden;
@@ -658,16 +825,16 @@
       height: 100%;
       background: var(--slate-accent);
       border-radius: 100px;
+      transition: width 1s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
-    /* History Track timeline Layout */
     .timeline-container {
       margin-bottom: 100px;
     }
 
     .timeline-container h3 {
-      font-size: 20px;
-      font-weight: 700;
+      font-size: 22px;
+      font-weight: 800;
       margin-bottom: 36px;
       letter-spacing: -0.01em;
     }
@@ -687,8 +854,8 @@
     }
 
     .role-meta h4 {
-      font-size: 16px;
-      font-weight: 700;
+      font-size: 17px;
+      font-weight: 800;
       color: var(--text-main);
     }
 
@@ -700,76 +867,259 @@
     }
 
     .role-desc {
-      font-size: 15px;
+      font-size: 15.5px;
       color: var(--text-muted);
       line-height: 1.65;
     }
 
-    /* Media Showcase Grid */
-    .showcase-header h3 {
-      font-size: 20px;
-      font-weight: 700;
+
+    .services-header {
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto 60px auto;
+    }
+
+    .services-header h2 {
+      font-size: clamp(28px, 5vw, 42px);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      margin-bottom: 16px;
+    }
+
+    .services-header p {
+      font-size: 17px;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    .services-grid-container {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 32px;
+      margin-bottom: 80px;
+    }
+
+    .services-grid-container .service-premium-card.span-full {
+      grid-column: span 2;
+    }
+
+    .service-premium-card {
+      border: 1px solid var(--border-color);
+      border-radius: 24px;
+      padding: 44px;
+      transition: all 0.35s cubic-bezier(0.165, 0.84, 0.44, 1);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.01);
+    }
+
+    /* Assigning delicate pastel backgrounds to service cards */
+    .service-premium-card:nth-child(1) {
+      background: var(--pastel-blue-bg);
+      border-color: var(--pastel-blue-border);
+    }
+    .service-premium-card:nth-child(2) {
+      background: var(--pastel-purple-bg);
+      border-color: var(--pastel-purple-border);
+    }
+    .service-premium-card:nth-child(3) {
+      background: var(--pastel-teal-bg);
+      border-color: var(--pastel-teal-border);
+    }
+    .service-premium-card:nth-child(4) {
+      background: var(--pastel-amber-bg);
+      border-color: var(--pastel-amber-border);
+    }
+    .service-premium-card:nth-child(5) {
+      background: var(--pastel-indigo-bg);
+      border-color: var(--pastel-indigo-border);
+    }
+
+    .service-premium-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 4px;
+      height: 100%;
+      background: var(--rich-obsidian);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .service-premium-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.04);
+    }
+
+    .service-premium-card:hover::before {
+      opacity: 1;
+    }
+
+    .service-card-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
       margin-bottom: 28px;
     }
 
-    /* FRAME 3: Services Tab Table Layout */
-    .services-table {
-      width: 100%;
-      border-collapse: collapse;
+    .service-icon-box {
+      width: 56px;
+      height: 56px;
+      border-radius: 14px;
+      background: #FFFFFF;
+      color: var(--rich-obsidian);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background-color 0.3s, color 0.3s;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.04);
     }
 
-    .service-row {
-      border-bottom: 1px solid var(--border-color);
-      display: grid;
-      grid-template-columns: 4.5fr 7.5fr;
-      padding: 56px 0;
-      gap: 48px;
+    .service-premium-card:hover .service-icon-box {
+      background: var(--rich-obsidian);
+      color: #FFFFFF;
     }
 
-    .service-row:first-child {
-      padding-top: 0;
+    .service-icon-box svg {
+      width: 26px;
+      height: 26px;
+      stroke-width: 2;
     }
 
-    .service-row:last-child {
-      border: none;
-      padding-bottom: 0;
-    }
-
-    .service-left h3 {
-      font-size: 24px;
+    .service-badge {
+      background: rgba(255, 255, 255, 0.6);
+      padding: 6px 14px;
+      border-radius: 100px;
+      font-size: 11px;
       font-weight: 700;
-      letter-spacing: -0.015em;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-light);
+      border: 1px solid rgba(0,0,0,0.05);
+    }
+
+    .service-premium-card:hover .service-badge {
+      background: var(--rich-obsidian);
+      color: #FFFFFF;
+    }
+
+    .service-card-body h3 {
+      font-size: 24px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
       margin-bottom: 12px;
       color: var(--text-main);
     }
 
-    .service-focus {
-      font-size: 14px;
-      color: var(--text-light);
-      font-weight: 600;
-    }
-
-    .service-right .delivery-list {
-      list-style-type: none;
-    }
-
-    .delivery-list li {
-      font-size: 15.5px;
+    .service-card-desc {
+      font-size: 15px;
       color: var(--text-muted);
-      line-height: 1.65;
-      margin-bottom: 12px;
+      line-height: 1.5;
+      margin-bottom: 28px;
+    }
+
+    .service-features-list {
+      list-style-type: none;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+      border-top: 1px solid rgba(0,0,0,0.05);
+      padding-top: 24px;
+    }
+
+    .services-grid-container .service-premium-card.span-full .service-features-list {
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .service-features-list li {
+      font-size: 14.5px;
+      color: var(--text-main);
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      line-height: 1.4;
+    }
+
+    .service-features-list li svg {
+      width: 18px;
+      height: 18px;
+      color: var(--success-green);
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .workflow-section {
+      background: linear-gradient(135deg, #F5F7FB 0%, #F1FBF9 100%);
+      border-radius: 28px;
+      padding: 56px;
+      margin-bottom: 80px;
+      border: 1px solid var(--pastel-teal-border);
+      box-shadow: 0 8px 24px rgba(0, 210, 196, 0.02);
+    }
+
+    .workflow-title {
+      font-size: 24px;
+      font-weight: 800;
+      text-align: center;
+      margin-bottom: 40px;
+      letter-spacing: -0.02em;
+    }
+
+    .workflow-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+    }
+
+    .workflow-step {
       position: relative;
-      padding-left: 24px;
     }
 
-    .delivery-list li::before {
-      content: "—";
+    .workflow-step:not(:last-child)::after {
+      content: "";
       position: absolute;
-      left: 0;
-      color: var(--text-light);
+      top: 24px;
+      right: -12px;
+      width: 24px;
+      height: 1px;
+      border-top: 2px dashed rgba(0, 0, 0, 0.1);
+      z-index: 1;
     }
 
-    /* Team Section Styles */
+    .step-number {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: var(--rich-obsidian);
+      color: #FFFFFF;
+      font-size: 16px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .step-title {
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: var(--text-main);
+    }
+
+    .step-desc {
+      font-size: 13.5px;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+
     .team-section {
       margin-top: 80px;
       border-top: 1px solid var(--border-color);
@@ -778,8 +1128,8 @@
 
     .team-header-title {
       font-size: 32px;
-      font-weight: 700;
-      letter-spacing: -0.020em;
+      font-weight: 800;
+      letter-spacing: -0.025em;
       text-align: center;
       margin-bottom: 12px;
       color: var(--text-main);
@@ -839,7 +1189,6 @@
       font-weight: 500;
     }
 
-    /* Global Obsidian Black Footer */
     footer {
       background: var(--rich-obsidian);
       color: #FFFFFF;
@@ -880,7 +1229,7 @@
     .footer-tagline {
       font-family: var(--font-tag);
       font-size: 11px;
-      font-weight: 700;
+      font-weight: 800;
       color: #888888;
       letter-spacing: 0.2em;
     }
@@ -916,7 +1265,6 @@
       color: #FFFFFF;
     }
 
-    /* Contact Matrix Frame */
     .contact-matrix {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
@@ -951,19 +1299,67 @@
     }
 
     /* Responsive Viewports */
+    @media (max-width: 1024px) {
+      .services-grid-container {
+        grid-template-columns: 1fr;
+      }
+      .services-grid-container .service-premium-card.span-full {
+        grid-column: auto;
+      }
+      .services-grid-container .service-premium-card.span-full .service-features-list {
+        grid-template-columns: 1fr;
+      }
+      .workflow-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 32px;
+      }
+      .workflow-step:not(:last-child)::after {
+        display: none;
+      }
+    }
+
     @media (max-width: 900px) {
-      header { padding: 0 24px; }
-      .tab-frame { padding: 60px 24px; }
-      .h1-title { font-size: 40px; }
-      .comparison-grid, .split-grid, .timeline-item, .service-row, .testimonial-carousel, .team-grid {
+      header { 
+        padding: 0 20px; 
+        height: 68px;
+      }
+      .tab-frame { padding: 40px 16px; }
+      .h1-title { font-size: 34px; }
+      .comparison-grid, .split-grid, .timeline-item, .testimonial-carousel, .team-grid {
         grid-template-columns: 1fr;
         gap: 32px;
       }
       .metrics-container, .reels-grid, .footer-top, .contact-matrix {
         grid-template-columns: 1fr;
-        gap: 40px;
+        gap: 36px;
       }
       .footer-nav { gap: 32px; }
+      .portrait-mask {
+        width: 220px;
+        height: 220px;
+      }
+      .workflow-grid {
+        grid-template-columns: 1fr;
+      }
+      .btn-solid, .btn-outline {
+        width: 100%;
+        text-align: center;
+      }
+      .tab-switcher {
+        width: 100%;
+        order: 3;
+        margin-top: 10px;
+      }
+      header {
+        flex-wrap: wrap;
+        height: auto;
+        padding: 12px 16px;
+        gap: 12px;
+      }
+      .nav-right {
+        display: flex;
+        justify-content: flex-end;
+      }
     }
   </style>
 </head>
@@ -973,7 +1369,7 @@
   <header>
     <a href="#" class="nav-left" onclick="switchTab('home'); return false;">
       <div class="logo-container">
-        <img src="logo.jpeg" onerror="this.src='https://placehold.co/100x100/0a0a0a/ffffff?text=GSF'" alt="GOSOCIALFLOW emblem Logo" class="logo-img">
+        <img src="logo.jpeg" onerror="this.src='https://placehold.co/150x150/0a0a0a/ffffff?text=GSF'" alt="GOSOCIALFLOW emblem Logo" class="logo-img">
       </div>
       <span class="brand-name">GOSOCIALFLOW</span>
     </a>
@@ -996,9 +1392,15 @@
     <!-- TAB FRAME 1: [ Home Tab ] -->
     <div class="tab-frame active" id="frame-home">
       <section class="hero-section">
+        <div class="hero-brand-top">
+          <div class="hero-logo-emblem">
+            <img src="logo.jpeg" onerror="this.src='https://placehold.co/100x100/0a0a0a/ffffff?text=GSF'" alt="GOSOCIALFLOW Emblem Logo">
+          </div>
+          <span class="hero-brand-title">GOSOCIALFLOW</span>
+        </div>
         <div class="top-label">We Create. We Manage. We Grow.</div>
         <h1 class="h1-title">Your Entire Digital Growth Engine. Managed by One Team.</h1>
-        <p class="paragraph-deck">We build the content, run the ads, and optimize your site so you can focus entirely on scaling your business.</p>
+        <p class="paragraph-deck">We build high-retention content, execute performance advertisements, and deploy premium sites to capture scaling business metrics.</p>
         <div class="actions-block">
           <button class="btn-solid" onclick="scrollToFooter()">Let's Talk</button>
           <button class="btn-outline" onclick="switchTab('services')">View Services</button>
@@ -1008,11 +1410,17 @@
       <!-- The Conflict/Resolution Grid Frame -->
       <div class="comparison-grid">
         <div class="comp-card friction">
-          <h3>Fragmented Freelancers</h3>
+          <h3>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: #FF3B30;"><circle cx="12" cy="12" r="10"></circle><line x1="15" y1="9" x2="9" y2="15"></line><line x1="9" y1="9" x2="15" y2="15"></line></svg>
+            Fragmented Freelancers
+          </h3>
           <p>Mismatched layouts, missed delivery deadlines, unoptimized ad spend, and disjointed brand voice under uncoordinated operators.</p>
         </div>
         <div class="comp-card flow">
-          <h3>Go Social Flow</h3>
+          <h3>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--success-green);"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            Go Social Flow
+          </h3>
           <p>One centralized technical pipeline synchronizing content creation, web platforms, and paid marketing pipelines perfectly to scale business metrics.</p>
         </div>
       </div>
@@ -1034,16 +1442,17 @@
         </div>
       </div>
 
-      <!-- New Improved Creative Showcase Intro -->
-      <section style="text-align: center; margin: 80px auto; max-width: 700px; padding: 0 24px;">
-        <p style="font-size: 18px; color: var(--text-muted); line-height: 1.6;">
-          We specialize in capturing high-impact visuals for cafes, real estate ventures, influencers, and grand weddings. Explore our creative showcase below.
+      <!-- Creative Showcase Intro -->
+      <section style="text-align: center; margin: 80px auto; max-width: 700px; padding: 0 16px;">
+        <p style="font-size: clamp(16px, 2.8vw, 19px); color: var(--text-muted); line-height: 1.6;">
+          We specialize in capturing high-impact visuals for cafes, real estate ventures, brands, and premium weddings. Explore our creative showcase below.
         </p>
       </section>
 
       <!-- High Retention Reels Showcase Section -->
       <section class="reels-section">
         <h2 class="reels-header">Our Creative Performance Reels</h2>
+        <div class="reels-subheader">Click any card below to unmute or manage playback options</div>
         <div class="reels-grid">
           
           <!-- Reel Card 1 -->
@@ -1132,14 +1541,29 @@
         </div>
       </section>
 
-      <!-- Testimonial Frame -->
+      <!-- Testimonial Frame with Integrated Live Video Showcase -->
       <div class="testimonial-carousel">
         <div class="testimonial-left">
           <p class="testimonial-review">"Go Social Flow restructured our content funnel and modern web platform completely. Their engineering mindset to creative execution is a game-changer."</p>
           <div class="testimonial-author">Founder, Turfbuddies</div>
         </div>
-        <div class="video-thumbnail-frame" onclick="switchTab('portfolio')">
-          <!-- Stand-in video container structure representing creative content -->
+
+        <!-- Fully Interactive Live Video Block -->
+        <div class="video-testimonial-block" id="testimonial-video-container">
+          <video src="testimonial-reel.mp4" loop muted playsinline class="testimonial-live-video" id="testimonial-video" poster="https://placehold.co/600x340/0a0a0a/ffffff?text=Play+Showcase"></video>
+          
+          <!-- Play Overlay -->
+          <div class="video-testimonial-overlay" id="testimonial-video-overlay">
+            <div class="play-giant-btn">
+              <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+            </div>
+            <span style="color: #ffffff; margin-top: 16px; font-weight: 700; font-size: 14px; text-transform: uppercase; letter-spacing: 0.1em; background: rgba(0,0,0,0.6); padding: 4px 12px; border-radius: 100px;">Click to Play & Unmute</span>
+          </div>
+
+          <!-- Quick Audio Action Control -->
+          <button class="video-action-btn testimonial-mute-btn" id="testimonial-audio-btn" title="Toggle Sound">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5L6 9H2v6h4l5 4V5z"></path><line x1="23" y1="9" x2="17" y2="15"></line><line x1="17" y1="9" x2="23" y2="15"></line></svg>
+          </button>
         </div>
       </div>
     </div>
@@ -1197,7 +1621,7 @@
 
       <!-- Media Showcase Grid -->
       <div class="showcase-header">
-        <h3>Selected Creative Assets</h3>
+        <h3 style="font-size: 20px; font-weight: 800; margin-bottom: 24px;">Selected Creative Assets</h3>
         <div class="reels-grid">
           
           <!-- Reel Card 4 -->
@@ -1287,84 +1711,218 @@
 
     <!-- TAB FRAME 3: [ Services Tab — Deep Dive ] -->
     <div class="tab-frame" id="frame-services">
-      <div class="services-table">
-        
-        <div class="service-row">
-          <div class="service-left">
-            <h3>📱 Social Media Handling</h3>
-            <div class="service-focus">Organic Growth & Consistency</div>
+      
+      <div class="services-header">
+        <h2>What We Do. Done Exceptionally.</h2>
+        <p>A comprehensive overview of our technical performance pipelines designed to scale your brand's authority, design consistency, and conversions.</p>
+      </div>
+
+      <!-- Immersive Cards Grid -->
+      <div class="services-grid-container">
+
+        <!-- Card 1: Social Media Handling (Blue Soft Colorway) -->
+        <div class="service-premium-card">
+          <div class="service-card-header">
+            <div class="service-icon-box" style="color: #0066CC;">
+              <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
+              </svg>
+            </div>
+            <span class="service-badge">Profile Scale</span>
           </div>
-          <div class="service-right">
-            <ul class="delivery-list">
-              <li>Comprehensive account and profile layout optimization</li>
-              <li>Data-backed monthly operational content calendars</li>
-              <li>Native asset publishing and audience pipeline analysis</li>
-              <li>High-conversion customized copy text captions</li>
+          <div class="service-card-body">
+            <h3>Social Media Management</h3>
+            <p class="service-card-desc">Comprehensive content creation and scheduled distribution setups ensuring organic outreach conversion increases across core channels.</p>
+            <ul class="service-features-list">
+              <li>
+                <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" /></svg>
+                Profile Optimization & Visual Auditing
+              </li>
+              <li>
+                <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" /></svg>
+                Strategic Monthly Operational Content Calendars
+              </li>
+              <li>
+                <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" /></svg>
+                Captions, Custom Tags, & Native Platform Scheduling
+              </li>
+              <li>
+                <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" /></svg>
+                Regular Analytics & Core Growth Tracking Loops
+              </li>
             </ul>
           </div>
         </div>
 
-        <div class="service-row">
-          <div class="service-left">
-            <h3>🎬 Video Creation</h3>
-            <div class="service-focus">High-Retention Audience Engagement</div>
+        <!-- Card 2: Video Creation (Purple Soft Colorway) -->
+        <div class="service-premium-card">
+          <div class="service-card-header">
+            <div class="service-icon-box" style="color: #8A2BE2;">
+              <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
+              </svg>
+            </div>
+            <span class="service-badge">High-Retention</span>
           </div>
-          <div class="service-right">
-            <ul class="delivery-list">
-              <li>Short-form cinematic reels and algorithmic format architecture</li>
-              <li>Seamless transition configurations and pacing controls</li>
-              <li>Targeted educational, corporate, and commercial business promos</li>
-              <li>Advanced typography overlay styling and matching audio curves</li>
+          <div class="service-card-body">
+            <h3>High-Retention Video Editing</h3>
+            <p class="service-card-desc">Crafting high-retention cinematic sequences, short-form reels, and commercial promotional assets that capture and maintain consumer attention span.</p>
+            <ul class="service-features-list">
+              <li>
+                <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" /></svg>
+                Short-form TikTok / Reels Hook Formulations
+              </li>
+              <li>
+                <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" /></svg>
+                Premium Text Captions & Custom Graphic Overlays
+              </li>
+              <li>
+                <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" /></svg>
+                Professional Color Grading & Master Sound Design
+              </li>
+              <li>
+                <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" /></svg>
+                Corporate Promos & High-Concept Cinematic Promos
+              </li>
             </ul>
           </div>
         </div>
 
-        <div class="service-row">
-          <div class="service-left">
-            <h3>🎨 Graphic Designing</h3>
-            <div class="service-focus">Visual Identity & Premium Authority</div>
+        <!-- Card 3: Graphic Designing (Teal Soft Colorway) -->
+        <div class="service-premium-card">
+          <div class="service-card-header">
+            <div class="service-icon-box" style="color: #00A389;">
+              <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+              </svg>
+            </div>
+            <span class="service-badge">Identity Focus</span>
           </div>
-          <div class="service-right">
-            <ul class="delivery-list">
-              <li>Cohesive across-the-board user interface aesthetics</li>
-              <li>Strategic product brand asset positioning frameworks</li>
-              <li>Engaging platform channel custom banner layouts</li>
-              <li>High-CTR customized social feed advertisement graphics</li>
+          <div class="service-card-body">
+            <h3>Graphic Designing & Identity</h3>
+            <p class="service-card-desc">Sleek user interface visuals, high-click-through-rate ad graphics, and premium digital assets built on strict design rules.</p>
+            <ul class="service-features-list">
+              <li>
+                <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" /></svg>
+                Ad Creatives Optimized for Feed Placement
+              </li>
+              <li>
+                <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" /></svg>
+                Custom Banner Designs & Brand Guides
+              </li>
+              <li>
+                <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" /></svg>
+                Carousel Social Templates & Informational Infographics
+              </li>
+              <li>
+                <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" /></svg>
+                Vector Brand Marks & Editorial Assets
+              </li>
             </ul>
           </div>
         </div>
 
-        <div class="service-row">
-          <div class="service-left">
-            <h3>🌐 Website Development</h3>
-            <div class="service-focus">High-Conversion Digital Interfaces</div>
+        <!-- Card 4: Web Dev (Amber Soft Colorway) -->
+        <div class="service-premium-card">
+          <div class="service-card-header">
+            <div class="service-icon-box" style="color: #D28700;">
+              <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+              </svg>
+            </div>
+            <span class="service-badge">Rapid Tech Stack</span>
           </div>
-          <div class="service-right">
-            <ul class="delivery-list">
-              <li>Clean, high-fidelity responsive frontend implementations</li>
-              <li>Rapid performance scores ensuring lower user bounce metrics</li>
-              <li>Seamless conversion-optimized lead capture structures</li>
-              <li>Integrated structural data tracking setups</li>
+          <div class="service-card-body">
+            <h3>Web Platform Engineering</h3>
+            <p class="service-card-desc">Designing and launching responsive, lightning-fast pages tuned for search engines, client discovery, and immediate conversion.</p>
+            <ul class="service-features-list">
+              <li>
+                <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" /></svg>
+                Figma-to-Code Custom Interactive Interfaces
+              </li>
+              <li>
+                <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" /></svg>
+                Mobile-First Layout Structures (iOS, Android, Tablet)
+              </li>
+              <li>
+                <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" /></svg>
+                Lead Captures, Pixel Integration & Conversions Tracking
+              </li>
+              <li>
+                <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" /></svg>
+                Speed & SEO Optimization For Lower Bounce Rates
+              </li>
             </ul>
           </div>
         </div>
 
-        <div class="service-row">
-          <div class="service-left">
-            <h3>🚀 Meta Ads Management</h3>
-            <div class="service-focus">Scalable Direct Campaign ROI</div>
+        <!-- Card 5: Meta Ads (Span Full Width - Indigo Soft Colorway) -->
+        <div class="service-premium-card span-full">
+          <div class="service-card-header">
+            <div class="service-icon-box" style="color: #3B42FF;">
+              <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+              </svg>
+            </div>
+            <span class="service-badge">Paid Acquisition</span>
           </div>
-          <div class="service-right">
-            <ul class="delivery-list">
-              <li>Granular custom audience definitions and targeting architecture</li>
-              <li>Iterative budget optimization matrices avoiding wasteful spend</li>
-              <li>Rapid customer acquisition funnels for explicit business capture</li>
-              <li>Comprehensive conversion analytics dashboards</li>
+          <div class="service-card-body">
+            <h3>Meta Ads & Lead Acquisition Funnels</h3>
+            <p class="service-card-desc">Highly targeted campaigns that directly generate return on investment. We handle custom audience definitions, pixel configuration, target matrixing, and weekly ad optimization audits.</p>
+            <ul class="service-features-list">
+              <li>
+                <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" /></svg>
+                Custom Audience Frameworks & Laser-Targeted Parameters
+              </li>
+              <li>
+                <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" /></svg>
+                Rapid-Iterative Ad Budget Allocation (Preventing Spend Loss)
+              </li>
+              <li>
+                <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" /></svg>
+                Comprehensive Weekly Conversion Dashboard Syncs
+              </li>
+              <li>
+                <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" /></svg>
+                Strategic Funnel Integrations for Explicit Scaling
+              </li>
             </ul>
           </div>
         </div>
 
       </div>
+
+      <!-- Professional Operational Loop section -->
+      <section class="workflow-section">
+        <h3 class="workflow-title">Our Operational Flow Loop</h3>
+        <div class="workflow-grid">
+          
+          <div class="workflow-step">
+            <div class="step-number" style="background: #E0ECFF; color: #0066CC;">1</div>
+            <div class="step-title">Audit & Sync</div>
+            <p class="step-desc">We deep dive into your digital footprints, identity benchmarks, and conversion structures.</p>
+          </div>
+
+          <div class="workflow-step">
+            <div class="step-number" style="background: #EADBFC; color: #8A2BE2;">2</div>
+            <div class="step-title">Build Out Pipeline</div>
+            <p class="step-desc">Our design, code, and editing heads produce high-end creatives and custom user paths.</p>
+          </div>
+
+          <div class="workflow-step">
+            <div class="step-number" style="background: #D1F5EE; color: #00A389;">3</div>
+            <div class="step-title">Deploy & Target</div>
+            <p class="step-desc">Deployment of the campaigns, responsive web infrastructure, and calendar releases.</p>
+          </div>
+
+          <div class="workflow-step">
+            <div class="step-number" style="background: #FFEAD7; color: #D28700;">4</div>
+            <div class="step-title">Track & Elevate</div>
+            <p class="step-desc">Granular adjustments to optimize the ROAS, traffic quality, and click conversion metrics.</p>
+          </div>
+
+        </div>
+      </section>
 
       <!-- Team Structural Grid Container inside Services Tab -->
       <section class="team-section">
@@ -1454,7 +2012,6 @@
   </footer>
 
   <script>
-    // Tab controller switcher
     function switchTab(tabId) {
       document.querySelectorAll('.tab-frame').forEach(frame => {
         frame.classList.remove('active');
@@ -1486,7 +2043,6 @@
       });
     });
 
-    // Video Custom Control Logic
     document.querySelectorAll('.reel-card').forEach(card => {
       const video = card.querySelector('.reel-video');
       const toast = card.querySelector('.video-status-toast');
@@ -1495,13 +2051,11 @@
       const muteBtn = card.querySelector('.toggle-mute-btn');
       const fullscreenBtn = card.querySelector('.fullscreen-video-btn');
 
-      // 1. Click on video container to toggle Mute/Unmute
       video.addEventListener('click', (e) => {
         e.stopPropagation();
         toggleMute();
       });
 
-      // 2. Click on mute overlay button to toggle Mute/Unmute
       if(muteBtn) {
         muteBtn.addEventListener('click', (e) => {
           e.stopPropagation();
@@ -1509,7 +2063,6 @@
         });
       }
 
-      // 3. Click on Fullscreen button
       if(fullscreenBtn) {
         fullscreenBtn.addEventListener('click', (e) => {
           e.stopPropagation();
@@ -1520,18 +2073,17 @@
       function toggleMute() {
         video.muted = !video.muted;
         
-        // Show status toast temporarily
         if (video.muted) {
           toastMute.style.display = 'none';
           toastUnmute.style.display = 'block';
           if(muteBtn) {
-            muteBtn.innerHTML = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5L6 9H2v6h4l5 4V5z"></path><line x1="23" y1="9" x2="17" y2="15"></line><line x1="17" y1="9" x2="23" y2="15"></line></svg>';
+            muteBtn.innerHTML = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5L6 9H2v6h4l5 4V5z"></path><line x1="23" y1="9" x2="17" y2="15"></line><line x1="17" y1="9" x2="23" y2="15"></line></svg>';
           }
         } else {
           toastMute.style.display = 'block';
           toastUnmute.style.display = 'none';
           if(muteBtn) {
-            muteBtn.innerHTML = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5L6 9H2v6h4l5 4V5z"></path><path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path><path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path></svg>';
+            muteBtn.innerHTML = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5L6 9H2v6h4l5 4V5z"></path><path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path><path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path></svg>';
           }
         }
 
@@ -1545,7 +2097,7 @@
         if (video.requestFullscreen) {
           video.requestFullscreen();
         } else if (video.webkitEnterFullscreen) {
-          video.webkitEnterFullscreen(); // Support iOS devices
+          video.webkitEnterFullscreen();
         } else if (video.webkitRequestFullscreen) {
           video.webkitRequestFullscreen();
         } else if (video.msRequestFullscreen) {
@@ -1553,6 +2105,37 @@
         }
       }
     });
+
+    // Custom Interactive Logic for bottom Testimonial Video Block
+    const testVideoContainer = document.getElementById('testimonial-video-container');
+    if (testVideoContainer) {
+      const tVideo = document.getElementById('testimonial-video');
+      const tOverlay = document.getElementById('testimonial-video-overlay');
+      const tAudioBtn = document.getElementById('testimonial-audio-btn');
+
+      testVideoContainer.addEventListener('click', (e) => {
+        e.stopPropagation();
+        if (tVideo.paused) {
+          tVideo.play();
+          testVideoContainer.classList.add('playing');
+        } else {
+          tVideo.pause();
+          testVideoContainer.classList.remove('playing');
+        }
+      });
+
+      if(tAudioBtn) {
+        tAudioBtn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          tVideo.muted = !tVideo.muted;
+          if (tVideo.muted) {
+            tAudioBtn.innerHTML = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5L6 9H2v6h4l5 4V5z"></path><line x1="23" y1="9" x2="17" y2="15"></line><line x1="17" y1="9" x2="23" y2="15"></line></svg>';
+          } else {
+            tAudioBtn.innerHTML = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5L6 9H2v6h4l5 4V5z"></path><path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path><path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path></svg>';
+          }
+        });
+      }
+    }
   </script>
 </body>
 </html>
